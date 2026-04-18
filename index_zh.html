@@ -232,36 +232,72 @@
 
     .hero-title {
       font-family: var(--ff-serif);
-      font-size: clamp(56px, 10vw, 120px);
-      font-weight: 700; line-height: .93;
+      font-size: clamp(64px, 11vw, 132px);
+      font-weight: 700;
+      line-height: .96;
       letter-spacing: -.03em;
-      margin-bottom: 20px;
+      margin: 0;
       animation: fadeUp .8s .12s ease both;
     }
+
     .hero-title.en-display {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 700;
-      line-height: .93;
+      line-height: .96;
       letter-spacing: -.03em;
+    }
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 14px;
+      animation: fadeUp .8s .08s ease both;
+    }
+
+    .hero-brand-icon {
+      width: auto;
+      height: clamp(56px, 8vw, 90px);
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .hero-title-brand {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .hero-tagline {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: clamp(20px, 2.6vw, 32px);
+      font-weight: 400;
+      color: var(--ink-3);
+      letter-spacing: .01em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      animation: fadeUp .8s .18s ease both;
+    }
+
+    .hero-sub {
+      font-size: clamp(11px, 1.2vw, 14px);
+      font-weight: 400;
+      color: var(--ink-4);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      animation: fadeUp .8s .24s ease both;
+    }
+
+    .hero-sub.en-copy {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: clamp(11px, 1.2vw, 14px);
+      font-weight: 400;
+      letter-spacing: .08em;
     }
     .hero-title .t-ink { color: var(--ink); }
     .hero-title .t-gold { color: var(--gold); }
     .hero-title .t-dim { color: var(--ink-4); }
-
-    .hero-product {
-      font-family: var(--ff-mono); font-size: 11px; font-weight: 500;
-      color: var(--gold);
-      letter-spacing: .16em; text-transform: uppercase;
-      margin-bottom: 14px;
-      animation: fadeUp .8s .08s ease both;
-    }
-    .hero-product span {
-      display: inline-block;
-      background: var(--gold-g2);
-      border: 1px solid rgba(184,146,74,.2);
-      border-radius: 100px;
-      padding: 4px 16px;
-    }
 
     .hero-sub {
       font-size: clamp(13px, 1.8vw, 17px); font-weight: 300;
@@ -1294,14 +1330,20 @@
   <div class="corner corner-br"></div>
   <div class="dot-grid"></div>
 
-  <div class="hero-product"><span>🦞</span>&nbsp; OneResearchClaw</div>
-
-  <h1 class="hero-title en-display">
-    <span class="t-dim">Any</span> <span class="t-ink">Research.</span><br>
-    <span class="t-gold">One</span> <span class="t-ink">Claw.</span>
-  </h1>
-
-  <p class="hero-sub en-copy">Multi-Format Input &rarr; Structured Research Report Generation Pipeline</p>
+  <div class="hero-brand">
+    <img src="./docs/assets/icon.png" alt="OneResearchClaw icon" class="hero-brand-icon">
+    <h1 class="hero-title hero-title-brand en-display">
+      <span class="t-gold">One</span><span class="t-ink">ResearchClaw</span>
+    </h1>
+  </div>
+  
+  <p class="hero-tagline en-copy">
+    Any Research. One Claw.
+  </p>
+  
+  <p class="hero-sub en-copy">
+    Multi-Format Input &rarr; Structured Research Report Generation Pipeline
+  </p>
 
   <p class="hero-desc">
     从会议音视频、文档、表格、演示文稿，到 arXiv、YouTube、Bilibili 链接 —— <br>
