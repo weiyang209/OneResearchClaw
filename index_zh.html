@@ -396,77 +396,97 @@
     /* =========================================
       CORE FEATURES
     ========================================= */
-    .feat-board {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .feat-item {
-      position: relative;
+    .feat-arch-wrap {
       background: rgba(255,255,255,.62);
-      border: 1px solid rgba(224,221,214,.9);
-      border-radius: 22px;
-      padding: 24px 26px 22px;
-      box-shadow: var(--shadow-sm);
-      backdrop-filter: blur(14px) saturate(1.1);
-      -webkit-backdrop-filter: blur(14px) saturate(1.1);
-      transition: all .28s ease;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
       overflow: hidden;
-    }
-
-    .feat-item::before {
-      content: '';
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(184,146,74,.48), transparent);
-    }
-
-    .feat-item:hover {
-      transform: translateY(-3px);
       box-shadow: var(--shadow-md);
-      border-color: rgba(184,146,74,.22);
-      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(14px) saturate(1.08);
+      -webkit-backdrop-filter: blur(14px) saturate(1.08);
     }
 
-    .feat-head {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
+    .feat-row {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border-bottom: 1px solid var(--border);
+      align-items: stretch;
+    }
+
+    .feat-row:last-child {
+      border-bottom: none;
+    }
+
+    .feat-meta {
+      padding: 22px 22px 22px 26px;
+      border-right: 1px solid var(--border);
+    }
+
+    .feat-badge {
+      display: inline-block;
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      padding: 3px 8px;
+      border-radius: var(--radius-xs);
+      letter-spacing: .1em;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
-    .feat-icon {
-      flex-shrink: 0;
-      font-size: 24px;
-      line-height: 1;
-      transform: translateY(2px);
-    }
+    .fb-gold   { background: var(--gold-g2);  color: var(--gold); }
+    .fb-teal   { background: var(--teal-g);   color: var(--teal); }
+    .fb-rose   { background: var(--rose-g);   color: var(--rose); }
+    .fb-violet { background: var(--violet-g); color: var(--violet); }
 
-    .feat-copy {
-      min-width: 0;
-    }
-
-    .feat-name {
+    .feat-title {
       font-family: var(--ff-serif);
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 600;
       color: var(--ink);
-      letter-spacing: -.01em;
-      line-height: 1.2;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      line-height: 1.25;
     }
 
-    .feat-desc {
+    .feat-sub {
+      font-size: 11px;
+      color: var(--ink-3);
+      line-height: 1.65;
+    }
+
+    .feat-body {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    .feat-body p {
       font-size: 13px;
       color: var(--ink-3);
-      line-height: 1.82;
+      line-height: 1.85;
     }
 
-    @media (max-width: 960px) {
-      .feat-board {
+    .feat-body strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .feat-row.f-gold   { border-left: 3px solid var(--gold); }
+    .feat-row.f-teal   { border-left: 3px solid var(--teal); }
+    .feat-row.f-rose   { border-left: 3px solid var(--rose); }
+    .feat-row.f-violet { border-left: 3px solid var(--violet); }
+
+    @media (max-width: 900px) {
+      .feat-row {
         grid-template-columns: 1fr;
+      }
+
+      .feat-meta {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .feat-body {
+        padding: 18px 20px 20px;
       }
     }
 
@@ -1520,106 +1540,102 @@
 
 <div class="sep"><hr></div>
 
+/* =========================================
+CORE FEATURES
+========================================= */
+
 <section>
   <div class="wrap">
     <p class="eyebrow">核心能力</p>
     <h2>为<span class="dim">真实科研</span>流程而生</h2>
     <p class="lead">从多输入统一接入，到 topic 拆分、research、review、导出与 skill 演化，OneResearchClaw 覆盖了一条完整 research workflow 所需的关键能力。</p>
 
-    <div class="feat-board">
-      <div class="feat-item rv">
-        <div class="feat-head">
-          <span class="feat-icon">🧭</span>
-          <div class="feat-copy">
-            <div class="feat-name">多输入源统一接入</div>
-          </div>
+    <div class="feat-arch-wrap rv">
+      <div class="feat-row f-gold">
+        <div class="feat-meta">
+          <div class="feat-badge fb-gold">Input · 01</div>
+          <div class="feat-title">🧭 多输入源统一接入</div>
+          <div class="feat-sub">Multi-format routing</div>
         </div>
-        <div class="feat-desc">
-          支持从会议录音到 PDF、从表格到 ZIP 的多类型材料输入。系统会自动识别材料类型，并路由到对应的 grounding skill，减少手动整理、转换和预处理成本。
-        </div>
-      </div>
-
-      <div class="feat-item rv d1">
-        <div class="feat-head">
-          <span class="feat-icon">🧠</span>
-          <div class="feat-copy">
-            <div class="feat-name">多 Topic 会议拆分</div>
-          </div>
-        </div>
-        <div class="feat-desc">
-          对长会议、复杂讨论或多议题材料，系统可以自动拆分出多个 topic，并分别生成独立的研究分支。每个 topic 都可以单独完成 grounding、research、summary 和 export，适合从一场复杂会议中产出多个聚焦 report。
+        <div class="feat-body">
+          <p>支持从会议录音到 PDF、从表格到 ZIP 的多类型材料输入。系统会自动识别材料类型，并路由到对应的 grounding skill，减少手动整理、转换和预处理成本。</p>
         </div>
       </div>
 
-      <div class="feat-item rv d2">
-        <div class="feat-head">
-          <span class="feat-icon">🎚️</span>
-          <div class="feat-copy">
-            <div class="feat-name">可控 Research 深度</div>
-          </div>
+      <div class="feat-row f-gold">
+        <div class="feat-meta">
+          <div class="feat-badge fb-gold">Input · 02</div>
+          <div class="feat-title">🧠 多 Topic 会议拆分</div>
+          <div class="feat-sub">Topic-level branching</div>
         </div>
-        <div class="feat-desc">
-          支持 simple / medium / complex 三档 research 模式，用于控制文献搜索、资料打开、证据整理和报告分析深度。既可以快速生成 briefing，也可以产出更完整的研究报告。
-        </div>
-      </div>
-
-      <div class="feat-item rv d3">
-        <div class="feat-head">
-          <span class="feat-icon">🔎</span>
-          <div class="feat-copy">
-            <div class="feat-name">Query 确认与定向检索</div>
-          </div>
-        </div>
-        <div class="feat-desc">
-          在正式检索前，系统会先基于 grounded note 生成候选 query，并支持用户确认、增删或修改。这样可以让文献搜索更贴合用户真正需要的调研方向，减少无关检索和 token 浪费。
+        <div class="feat-body">
+          <p>对长会议、复杂讨论或多议题材料，系统可以自动拆分出多个 topic，并分别生成独立的研究分支。每个 topic 都可以单独完成 grounding、research、summary 和 export，适合从一场复杂会议中产出多个聚焦 report。</p>
         </div>
       </div>
 
-      <div class="feat-item rv">
-        <div class="feat-head">
-          <span class="feat-icon">🧪</span>
-          <div class="feat-copy">
-            <div class="feat-name">多模型 Review 机制</div>
-          </div>
+      <div class="feat-row f-teal">
+        <div class="feat-meta">
+          <div class="feat-badge fb-teal">Research · 01</div>
+          <div class="feat-title">🎚️ 可控 Research 深度</div>
+          <div class="feat-sub">Simple / Medium / Complex</div>
         </div>
-        <div class="feat-desc">
-          报告生成后进入 review → rewrite 闭环，可通过不同模型或审查视角检查内容完整性、证据一致性、逻辑连贯性和过度推断问题，再对报告进行有限轮修订。
-        </div>
-      </div>
-
-      <div class="feat-item rv d1">
-        <div class="feat-head">
-          <span class="feat-icon">☁️</span>
-          <div class="feat-copy">
-            <div class="feat-name">云端链接一键接入</div>
-          </div>
-        </div>
-        <div class="feat-desc">
-          支持对云端链接材料进行接入与处理，例如 arXiv、YouTube、Bilibili 等来源，让线上材料可以直接进入同一套研究流水线。
+        <div class="feat-body">
+          <p>支持 simple / medium / complex 三档 research 模式，用于控制文献搜索、资料打开、证据整理和报告分析深度。既可以快速生成 briefing，也可以产出更完整的研究报告。</p>
         </div>
       </div>
 
-      <div class="feat-item rv d2">
-        <div class="feat-head">
-          <span class="feat-icon">📦</span>
-          <div class="feat-copy">
-            <div class="feat-name">多格式导出</div>
-          </div>
+      <div class="feat-row f-teal">
+        <div class="feat-meta">
+          <div class="feat-badge fb-teal">Research · 02</div>
+          <div class="feat-title">🔎 Query 确认与定向检索</div>
+          <div class="feat-sub">Query planning before search</div>
         </div>
-        <div class="feat-desc">
-          支持将最终结果导出为 md / docx / pdf / pptx / audio，覆盖阅读、归档、汇报和复用等不同交付场景，并支持中文 / 英文导出。
+        <div class="feat-body">
+          <p>在正式检索前，系统会先基于 grounded note 生成候选 query，并支持用户确认、增删或修改。这样可以让文献搜索更贴合用户真正需要的调研方向，减少无关检索和 token 浪费。</p>
         </div>
       </div>
 
-      <div class="feat-item rv d3">
-        <div class="feat-head">
-          <span class="feat-icon">🧬</span>
-          <div class="feat-copy">
-            <div class="feat-name">Skill-Evolve 技能演化</div>
-          </div>
+      <div class="feat-row f-rose">
+        <div class="feat-meta">
+          <div class="feat-badge fb-rose">Review · 01</div>
+          <div class="feat-title">🧪 多模型 Review 机制</div>
+          <div class="feat-sub">Review → Rewrite loop</div>
         </div>
-        <div class="feat-desc">
-          支持基于用户反馈演化 skill 子集，通过反馈收集、补丁生成、回归检查和版本提升，让系统能力可以持续迭代，而不是固定在一次性的手写流程中。
+        <div class="feat-body">
+          <p>报告生成后进入 review → rewrite 闭环，可通过不同模型或审查视角检查内容完整性、证据一致性、逻辑连贯性和过度推断问题，再对报告进行有限轮修订。</p>
+        </div>
+      </div>
+
+      <div class="feat-row f-violet">
+        <div class="feat-meta">
+          <div class="feat-badge fb-violet">Access · 01</div>
+          <div class="feat-title">☁️ 云端链接一键接入</div>
+          <div class="feat-sub">Remote-source integration</div>
+        </div>
+        <div class="feat-body">
+          <p>支持对云端链接材料进行接入与处理，例如 arXiv、YouTube、Bilibili 等来源，让线上材料可以直接进入同一套研究流水线。</p>
+        </div>
+      </div>
+
+      <div class="feat-row f-violet">
+        <div class="feat-meta">
+          <div class="feat-badge fb-violet">Output · 01</div>
+          <div class="feat-title">📦 多格式导出</div>
+          <div class="feat-sub">md / docx / pdf / pptx / audio</div>
+        </div>
+        <div class="feat-body">
+          <p>支持将最终结果导出为 md / docx / pdf / pptx / audio，覆盖阅读、归档、汇报和复用等不同交付场景，并支持中文 / 英文导出。</p>
+        </div>
+      </div>
+
+      <div class="feat-row f-violet">
+        <div class="feat-meta">
+          <div class="feat-badge fb-violet">Evolution · 01</div>
+          <div class="feat-title">🧬 Skill-Evolve 技能演化</div>
+          <div class="feat-sub">Feedback-driven iteration</div>
+        </div>
+        <div class="feat-body">
+          <p>支持基于用户反馈演化 skill 子集，通过反馈收集、补丁生成、回归检查和版本提升，让系统能力可以持续迭代，而不是固定在一次性的手写流程中。</p>
         </div>
       </div>
     </div>
