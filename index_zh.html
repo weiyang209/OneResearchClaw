@@ -178,6 +178,11 @@
       margin-bottom: 56px; line-height: 1.85;
     }
 
+    .en-copy {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-style: normal;
+    }
+
     /* =========================================
        HERO
     ========================================= */
@@ -257,6 +262,12 @@
       color: var(--ink-3); letter-spacing: .03em;
       margin-bottom: 14px;
       animation: fadeUp .8s .2s ease both;
+    }
+    .hero-sub.en-copy {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: clamp(12px, 1.65vw, 16px);
+      font-weight: 300;
+      letter-spacing: .02em;
     }
     .hero-desc {
       font-size: 15px; color: var(--ink-3);
@@ -981,7 +992,7 @@
     <span class="t-gold">One</span> <span class="t-ink">Claw.</span>
   </h1>
 
-  <p class="hero-sub">多模态输入 &rarr; 结构化研究报告生成流程</p>
+  <p class="hero-sub en-copy">Multi-Format Input &rarr; Structured Research Report Generation Pipeline</p>
 
   <p class="hero-desc">
     从会议音视频、文档、表格、演示文稿，到 arXiv、YouTube、Bilibili 链接 —— <br>
