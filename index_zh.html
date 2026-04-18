@@ -198,9 +198,20 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 180px 64px 90px;
+      padding: 150px 64px 36px;
       overflow: hidden;
     }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--ink-3);
+      max-width: 480px;
+      margin: 0 auto 28px;
+      line-height: 1.85;
+      animation: fadeUp .8s .3s ease both;
+    }
+
+
 
     /* elegant corner marks */
     .corner {
@@ -743,33 +754,107 @@
     /* =========================================
        NEWS
     ========================================= */
-    .news-list {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
+    .news-section {
+      padding-top: 6px;
+      padding-bottom: 56px;
     }
-    .news-item {
-      padding: 18px 28px;
+
+    .news-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .news-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+      padding: 18px 0;
       border-bottom: 1px solid var(--border-soft);
-      display: flex; gap: 20px; align-items: center;
-      transition: background .2s;
     }
-    .news-item:last-child { border-bottom: none; }
-    .news-item:hover { background: var(--bg-subtle); }
+
     .news-date {
-      font-family: var(--ff-mono); font-size: 10px;
-      color: var(--ink-4); white-space: nowrap; min-width: 80px;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-top: 2px;
     }
-    .news-text { font-size: 13px; color: var(--ink-2); flex: 1; }
-    .news-text strong { color: var(--ink); }
-    .news-tag {
-      font-family: var(--ff-mono); font-size: 9px;
-      padding: 2px 7px; border-radius: 4px;
-      background: var(--gold-g2); color: var(--gold);
-      border: 1px solid rgba(184,146,74,.15);
-      white-space: nowrap; flex-shrink: 0;
+
+    .news-main {
+      min-width: 0;
+    }
+
+    .news-line {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--ink-2);
+    }
+
+    .news-line strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .news-inline-tag {
+      display: inline-block;
+      margin-left: 10px;
+      font-family: var(--ff-mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      vertical-align: middle;
+    }
+
+    .news-section .wrap {
+      max-width: 920px;
+    }
+
+    .news-section .eyebrow {
+      width: fit-content;
+      margin: 0 auto 20px;
+      justify-content: center;
+    }
+
+    .news-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--border-soft);
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .news-row {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    @media (max-width: 720px) {
+      .news-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 14px 0;
+      }
+
+      .news-date {
+        font-size: 9px;
+      }
+
+      .news-line {
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .news-stream {
+        max-width: 100%;
+      }
     }
 
     /* =========================================
@@ -1358,7 +1443,7 @@
   <div class="hero-btns">
     <a href="#qs" class="btn btn-gold">快速开始</a>
     <a href="#pipeline" class="btn btn-outline">整体流程</a>
-    <a href="https://github.com/gaotiexinqu/One-Research" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
+    <a href="https://github.com/gaotiexinqu/One-Research" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
   </div>
   
 </div>
