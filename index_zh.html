@@ -962,6 +962,15 @@
       padding: 2px 6px;
       border-radius: 4px;
     }
+    .case-input-row a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .case-input-row a:hover code {
+      background: var(--gold-g2);
+      border-color: rgba(184,146,74,.22);
+    }
     .qs-example {
       margin-top: 28px;
       background: var(--bg-card);
@@ -1813,7 +1822,7 @@
             <span class="cf-tag">2 个 topic</span>
             <span class="cf-tag">双语 PDF</span>
           </div>
-          <div class="case-input-row">输入：<code>docs/showcase/inputs/case1/meeting-case1.txt</code></div>
+          <div class="case-input-row">输入：<a href="./docs/showcase/inputs/case1/meeting-case1.txt" download><code>docs/showcase/inputs/case1/meeting-case1.txt</code></a></div>
           <div class="case-cta">
             <a href="./docs/showcase/reports/case1/meeting_meeting-case1_20260416004530_topic01/en/report.pdf" class="case-link">📄 Topic01 EN PDF</a>
             <a href="./docs/showcase/reports/case1/meeting_meeting-case1_20260416004530_topic01/zh/report.pdf" class="case-link">📄 Topic01 中文 PDF</a>
@@ -1841,7 +1850,7 @@
             <span class="cf-tag">Grounded report</span>
             <span class="cf-tag">双语 PDF</span>
           </div>
-          <div class="case-input-row">输入：<code>docs/showcase/inputs/case2/arxiv-case2.txt</code></div>
+          <div class="case-input-row">输入：<a href="./docs/showcase/inputs/case2/arxiv-case2.txt" download><code>docs/showcase/inputs/case2/arxiv-case2.txt</code></a></div>
           <div class="case-cta">
             <a href="./docs/showcase/reports/case2/pdf-2505.03123_20260415112502/en/report.pdf" class="case-link">📄 EN PDF</a>
             <a href="./docs/showcase/reports/case2/pdf-2505.03123_20260415112502/zh/report.pdf" class="case-link">📄 中文 PDF</a>
@@ -1866,7 +1875,7 @@
             <span class="cf-tag">Simple / Medium / Complex</span>
             <span class="cf-tag">深度对比</span>
           </div>
-          <div class="case-input-row">输入：<code>docs/showcase/inputs/case3/youtube.txt</code></div>
+          <div class="case-input-row">输入：<a href="./docs/showcase/inputs/case3/youtube.txt" download><code>docs/showcase/inputs/case3/youtube.txt</code></a></div>
           <div class="case-cta">
             <a href="./docs/showcase/reports/case3/simple/video-55_20260417134520/en/report.pdf" class="case-link">📄 Simple EN</a>
             <a href="./docs/showcase/reports/case3/medium/video-55_20260417145442/en/report.pdf" class="case-link">📄 Medium EN</a>
@@ -1893,7 +1902,7 @@
             <span class="cf-tag">质量门控</span>
             <span class="cf-tag">交付前修订</span>
           </div>
-          <div class="case-input-row">输入：<code>docs/showcase/inputs/case4/2506.10006v2.pdf</code></div>
+          <div class="case-input-row">输入：<a href="./docs/showcase/inputs/case4/2506.10006v2.pdf" download><code>docs/showcase/inputs/case4/2506.10006v2.pdf</code></a></div>
           <div class="case-cta">
             <a href="./docs/showcase/reports/case4/berfore_review/pdf-2506.10006v2before_20260416025902/en/report.pdf" class="case-link">📄 审阅前 EN</a>
             <a href="./docs/showcase/reports/case4/berfore_review/pdf-2506.10006v2before_20260416025902/zh/report.pdf" class="case-link">📄 审阅前 中文</a>
@@ -1921,7 +1930,7 @@
             <span class="cf-tag">跨文件综合</span>
             <span class="cf-tag">双语 PDF</span>
           </div>
-          <div class="case-input-row">输入：<code>docs/showcase/inputs/case5/HER2-case5.zip</code></div>
+          <div class="case-input-row">输入：<a href="./docs/showcase/inputs/case5/HER2-case5.zip" download><code>docs/showcase/inputs/case5/HER2-case5.zip</code></a></div>
           <div class="case-cta">
             <a href="./docs/showcase/reports/case5/archive-HER2-case5_20260415130231/en/report.pdf" class="case-link">📄 EN PDF</a>
             <a href="./docs/showcase/reports/case5/archive-HER2-case5_20260415130231/zh/report.pdf" class="case-link">📄 中文 PDF</a>
@@ -2084,7 +2093,6 @@
               <p>在 complex 模式下打开来源、保存证据、整理 paper notes，并生成更扎实的 lit.md。</p>
               <div class="artifact-links">
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/lit_inputs/archive-HER2-case5_20260415130231/search_results.json">search_results.json</a>
-                <a class="artifact-link" href="./docs/showcase/reports/readme_case/lit_inputs/archive-HER2-case5_20260415130231/opened_sources/">opened_sources/</a>
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/lit_results/archive-HER2-case5_20260415130231/lit.md">lit.md</a>
               </div>
             </div>
@@ -2102,9 +2110,6 @@
               <p>围绕 coverage、evidence specificity、analytical depth 与 deliverability 做有限轮修订。</p>
               <div class="artifact-links">
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/review_outputs/archive-HER2-case5_20260415130231/review_history.json">review_history.json</a>
-                <a class="artifact-link" href="./docs/showcase/reports/readme_case/review_outputs/archive-HER2-case5_20260415130231/round_0/">round_0/</a>
-                <a class="artifact-link" href="./docs/showcase/reports/readme_case/review_outputs/archive-HER2-case5_20260415130231/round_1/">round_1/</a>
-                <a class="artifact-link" href="./docs/showcase/reports/readme_case/review_outputs/archive-HER2-case5_20260415130231/round_2/">round_2/</a>
               </div>
             </div>
 
