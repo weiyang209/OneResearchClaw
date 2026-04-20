@@ -46,9 +46,9 @@
       --shadow-lg:     0 14px 40px rgba(26,24,21,.11);
       --shadow-xl:     0 28px 64px rgba(26,24,21,.13);
 
-      --ff-serif:  'Cormorant Garamond', Georgia, serif;
-      --ff-sans:   'DM Sans', system-ui, sans-serif;
-      --ff-mono:   'DM Mono', 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+      --ff-serif:  'Cormorant Garamond', 'Noto Serif', 'Noto Serif SC', 'Noto Serif JP', 'Noto Serif KR', Georgia, serif;
+      --ff-sans:   'DM Sans', 'Inter', 'Segoe UI', 'Noto Sans', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif;
+      --ff-mono:   'DM Mono', 'SFMono-Regular', 'Cascadia Mono', 'Menlo', 'Consolas', 'Noto Sans Mono', monospace;
 
       --radius-xs: 4px;
       --radius-sm: 6px;
@@ -77,50 +77,6 @@
       --code-pre: #9e9890;
       --code-border: rgba(255,255,255,.05);
       --shadow-theme-menu: 0 18px 48px rgba(26,24,21,.14);
-    }
-
-    body[data-theme="light"] {
-      color-scheme: light;
-      --bg:           #ffffff;
-      --bg-card:      #ffffff;
-      --bg-subtle:    #f7f7f5;
-      --bg-muted:     #efefeb;
-
-      --ink:          #161513;
-      --ink-2:        #44413c;
-      --ink-3:        #78736c;
-      --ink-4:        #b1aca3;
-
-      --gold-g:       rgba(184,146,74,.06);
-      --gold-g2:      rgba(184,146,74,.10);
-      --teal-g:       rgba(42,157,143,.06);
-      --rose-g:       rgba(192,98,90,.06);
-      --violet-g:     rgba(124,110,176,.06);
-
-      --border:       #e8e4dd;
-      --border-soft:  #f0ece5;
-
-      --nav-bg: rgba(255,255,255,.88);
-      --panel-glass: rgba(255,255,255,.76);
-      --grid-line: rgba(184,146,74,.035);
-      --bg-glow-top: rgba(184,146,74,.035);
-      --bg-glow-bottom: rgba(124,110,176,.025);
-      --theme-btn-bg: rgba(255,255,255,.94);
-      --theme-btn-hover: rgba(184,146,74,.08);
-      --theme-btn-border: rgba(184,146,74,.18);
-      --theme-btn-active-bg: rgba(184,146,74,.11);
-      --theme-btn-active-border: rgba(184,146,74,.28);
-      --github-bg: rgba(184,146,74,.08);
-      --github-hover-bg: rgba(184,146,74,.14);
-      --github-text: var(--ink);
-      --github-border: rgba(184,146,74,.18);
-      --github-shadow: 0 10px 24px rgba(184,146,74,.08);
-      --github-shadow-hover: 0 14px 28px rgba(184,146,74,.12);
-      --code-bg: #181715;
-      --code-title: rgba(255,255,255,.30);
-      --code-pre: #b8b0a7;
-      --code-border: rgba(255,255,255,.06);
-      --shadow-theme-menu: 0 18px 48px rgba(26,24,21,.10);
     }
 
     body[data-theme="dark"] {
@@ -185,7 +141,7 @@
       background: var(--bg);
       color: var(--ink);
       font-family: var(--ff-sans);
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.75;
       overflow-x: hidden;
       transition: background-color .28s ease, color .28s ease;
@@ -233,16 +189,22 @@
       transition: background-color .28s ease, border-color .28s ease;
     }
     .nav-logo {
-      display: flex; align-items: center; gap: 3px;
+      display: flex; align-items: center; gap: 9px;
       font-family: var(--ff-serif); font-size: 18px;
       font-weight: 600; color: var(--ink);
       letter-spacing: -.01em;
+    }
+    .nav-logo-icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+      flex-shrink: 0;
     }
     .nav-logo .claw { font-size: 22px; }
     .nav-logo .gold { color: var(--gold); }
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
-      font-size: 11px; font-weight: 500; color: var(--ink-3);
+      font-size: 12px; font-weight: 500; color: var(--ink-3);
       letter-spacing: .06em; text-transform: uppercase;
       transition: color .2s;
     }
@@ -341,7 +303,7 @@
       border-radius: 999px;
       background: var(--bg-card);
       color: var(--gold);
-      font-family: var(--ff-mono); font-size: 10px; font-weight: 500;
+      font-family: var(--ff-mono); font-size: 11px; font-weight: 500;
       letter-spacing: .1em; text-transform: uppercase;
       box-shadow: var(--shadow-xs);
       transition: all .2s ease;
@@ -365,7 +327,7 @@
 
     .eyebrow {
       display: inline-flex; align-items: center; gap: 12px;
-      font-family: var(--ff-mono); font-size: 10px; font-weight: 500;
+      font-family: var(--ff-mono); font-size: 11px; font-weight: 500;
       color: var(--gold); letter-spacing: .2em; text-transform: uppercase;
       margin-bottom: 18px;
     }
@@ -406,7 +368,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 150px 64px 36px;
+      padding: 112px 64px 14px;
       overflow: hidden;
     }
 
@@ -434,7 +396,7 @@
       background: var(--gold-g2);
       border: 1px solid rgba(184,146,74,.2);
       color: var(--gold);
-      font-family: var(--ff-mono); font-size: 10px;
+      font-family: var(--ff-mono); font-size: 11px;
       letter-spacing: .14em; text-transform: uppercase;
       padding: 5px 14px; border-radius: 100px;
       margin-bottom: 32px;
@@ -466,7 +428,7 @@
       align-items: center;
       justify-content: center;
       gap: 16px;
-      margin-bottom: 14px;
+      margin-bottom: 8px;
       animation: fadeUp .8s .08s ease both;
     }
 
@@ -475,6 +437,13 @@
       height: clamp(56px, 8vw, 90px);
       display: block;
       flex-shrink: 0;
+    }
+
+    .hero-logo-banner {
+      display: block;
+      width: min(962px, 100%);
+      height: auto;
+      margin: 0 auto;
     }
 
     .hero-title-brand {
@@ -499,20 +468,20 @@
     .hero-title .t-dim { color: var(--ink-4); }
 
     .hero-sub {
-      font-size: clamp(13px, 1.8vw, 17px); font-weight: 300;
+      font-size: clamp(14px, 1.95vw, 18px); font-weight: 300;
       color: var(--ink-3); letter-spacing: .03em;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       animation: fadeUp .8s .2s ease both;
     }
     .hero-sub.en-copy {
       font-family: 'DM Sans', system-ui, sans-serif;
-      font-size: clamp(12px, 1.65vw, 16px);
+      font-size: clamp(13px, 1.75vw, 17px);
       font-weight: 300;
       letter-spacing: .02em;
     }
     .hero-desc {
-      font-size: 15px; color: var(--ink-3);
-      max-width: 480px; margin: 0 auto 40px;
+      font-size: 16px; color: var(--ink-3);
+      max-width: 480px; margin: 0 auto 18px;
       line-height: 1.85;
       animation: fadeUp .8s .3s ease both;
     }
@@ -525,7 +494,7 @@
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 9px;
       padding: 11px 24px; border-radius: var(--radius-md);
-      font-family: var(--ff-sans); font-size: 13px; font-weight: 500;
+      font-family: var(--ff-sans); font-size: 14px; font-weight: 500;
       cursor: pointer; border: none; transition: all .25s;
     }
     .btn-icon {
@@ -691,7 +660,7 @@
     }
 
     .feat-desc {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--ink-3);
     line-height: 1.82;
     }
@@ -800,11 +769,11 @@
       50% { box-shadow: 0 0 14px rgba(184,146,74,.6); }
     }
     .pipe-bar-title {
-      font-family: var(--ff-mono); font-size: 10px;
+      font-family: var(--ff-mono); font-size: 11px;
       color: var(--ink-4); letter-spacing: .1em;
     }
     .pipe-bar-hint {
-      font-family: var(--ff-mono); font-size: 10px;
+      font-family: var(--ff-mono); font-size: 11px;
       color: var(--gold); letter-spacing: .08em;
       padding: 6px 10px;
       border-radius: 999px;
@@ -888,7 +857,7 @@
       color: var(--ink); margin-bottom: 6px;
       transition: color .22s ease;
     }
-    .ps-sub { font-size: 11px; color: var(--ink-3); line-height: 1.6; transition: color .22s ease; }
+    .ps-sub { font-size: 12px; color: var(--ink-3); line-height: 1.6; transition: color .22s ease; }
 
     .ps:hover .ps-icon,
     .ps.is-hover .ps-icon,
@@ -940,7 +909,7 @@
     }
     .pipe-detail-kicker {
       font-family: var(--ff-mono);
-      font-size: 10px;
+      font-size: 11px;
       color: var(--gold);
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -974,7 +943,7 @@
       border: 1px solid rgba(184,146,74,.18);
       background: rgba(184,146,74,.08);
       font-family: var(--ff-mono);
-      font-size: 10px;
+      font-size: 11px;
       color: var(--gold);
       letter-spacing: .04em;
     }
@@ -991,7 +960,7 @@
     }
     .pipe-detail-block-head {
       font-family: var(--ff-mono);
-      font-size: 9px;
+      font-size: 10px;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--gold);
@@ -1011,7 +980,7 @@
       background: var(--bg-subtle);
       border: 1px solid var(--border);
       font-family: var(--ff-mono);
-      font-size: 10px;
+      font-size: 11px;
       color: var(--ink-3);
       white-space: nowrap;
     }
@@ -1023,12 +992,12 @@
       align-items: center;
     }
     .pipe-io-head {
-      font-family: var(--ff-mono); font-size: 9px;
+      font-family: var(--ff-mono); font-size: 10px;
       color: var(--ink-4); letter-spacing: .14em; margin-bottom: 10px;
     }
     .tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .tag {
-      font-family: var(--ff-mono); font-size: 11px; font-weight: 400;
+      font-family: var(--ff-mono); font-size: 12px; font-weight: 400;
       padding: 3px 9px; border-radius: 5px;
     }
     .tg-gold   { background: var(--gold-g2);  color: var(--gold);   border: 1px solid rgba(184,146,74,.15); }
@@ -1095,7 +1064,34 @@
       }
     }
 
-        /* =========================================
+    
+    .framework-preview-block {
+      position: relative;
+      z-index: 1;
+      padding: 6px 0 12px;
+    }
+
+    .framework-preview-figure {
+      margin: 0 auto;
+      max-width: 980px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      overflow: hidden;
+      background: transparent;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .framework-preview-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .framework-preview-actions {
+      margin-top: 20px;
+      margin-bottom: 4px;
+    }
+
+    /* =========================================
        NEWS
     ========================================= */
     .news-section {
@@ -1277,7 +1273,7 @@
       border: 1px solid rgba(184,146,74,.16);
       color: var(--gold);
       font-family: var(--ff-mono);
-      font-size: 9px;
+      font-size: 10px;
       letter-spacing: .1em;
       text-transform: uppercase;
       margin-bottom: 12px;
@@ -1285,7 +1281,7 @@
 
     .news-item-title {
       font-family: 'DM Sans', system-ui, sans-serif;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 600;
       color: var(--ink);
       line-height: 1.4;
@@ -1293,7 +1289,7 @@
     }
 
     .news-item-desc {
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.85;
       color: var(--ink-3);
     }
@@ -1397,7 +1393,7 @@
     ========================================= */
 
     .overview-section {
-      padding-top: 42px;
+      padding-top: 24px;
       padding-bottom: 88px;
     }
 
@@ -1545,7 +1541,7 @@
 
     @media (max-width: 640px) {
       .overview-section {
-        padding-top: 34px;
+        padding-top: 24px;
         padding-bottom: 78px;
       }
 
@@ -1722,7 +1718,7 @@
     }
     .case-proof-head {
       font-family: var(--ff-mono);
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--gold);
@@ -1747,14 +1743,14 @@
     }
     .case-fact-k {
       font-family: var(--ff-mono);
-      font-size: 9px;
+      font-size: 10px;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 6px;
     }
     .case-fact-v {
-      font-size: 12.5px;
+      font-size: 13.5px;
       color: var(--ink-2);
       line-height: 1.72;
     }
@@ -1771,14 +1767,14 @@
     }
     .case-compare-k {
       font-family: var(--ff-mono);
-      font-size: 9px;
+      font-size: 10px;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 7px;
     }
     .case-compare-v {
-      font-size: 12px;
+      font-size: 13.5px;
       color: var(--ink-2);
       line-height: 1.72;
     }
@@ -1841,7 +1837,7 @@
     }
     .case-meta {}
     .case-type {
-      font-family: var(--ff-mono); font-size: 9px;
+      font-family: var(--ff-mono); font-size: 10px;
       text-transform: uppercase; letter-spacing: .12em;
       margin-bottom: 3px;
     }
@@ -1855,7 +1851,7 @@
     }
     .case-body { padding: 16px 24px 20px; }
     .case-desc {
-      font-size: 12.5px; color: var(--ink-3); line-height: 1.7;
+      font-size: 14px; color: var(--ink-3); line-height: 1.8;
       margin-bottom: 14px;
     }
     .case-features {
@@ -2027,7 +2023,7 @@
       margin-top: 10px;
       padding-top: 10px;
       border-top: 1px dashed var(--border-soft);
-      font-size: 11px;
+      font-size: 12px;
       color: var(--ink-3);
       line-height: 1.7;
     }
@@ -2108,7 +2104,7 @@
     }
     .mini-chip {
     display:inline-flex; align-items:center;
-    font-family: var(--ff-mono); font-size: 10px;
+    font-family: var(--ff-mono); font-size: 11px;
     color: var(--ink-3); background: var(--bg-subtle); border: 1px solid var(--border);
     padding: 4px 8px; border-radius: 999px;
     }
@@ -2128,7 +2124,7 @@
       color: var(--ink); margin-bottom: 6px;
     }
     .stage-card p {
-      font-size: 12px; color: var(--ink-3); line-height: 1.7;
+      font-size: 13px; color: var(--ink-3); line-height: 1.7;
       margin-bottom: 10px;
     }
     .artifact-links {
@@ -2136,7 +2132,7 @@
     }
     .artifact-link {
     display:inline-flex; align-items:center; gap:5px;
-    font-family: var(--ff-mono); font-size: 10px; letter-spacing: .03em;
+    font-family: var(--ff-mono); font-size: 11px; letter-spacing: .03em;
     color: var(--gold);
     background: rgba(184,146,74,.08);
     border: 1px solid rgba(184,146,74,.24);
@@ -2264,7 +2260,7 @@
     .cb-dot  { width: 10px; height: 10px; border-radius: 50%; }
     pre {
       padding: 22px; font-family: var(--ff-mono);
-      font-size: 11.5px; line-height: 1.8; color: var(--code-pre);
+      font-size: 12.5px; line-height: 1.85; color: var(--code-pre);
       overflow-x: auto;
     }
     .kw  { color: var(--gold-l); }
@@ -2283,10 +2279,10 @@
       font-weight: 500; color: var(--gold);
     }
     .qs-step h4 {
-      font-family: var(--ff-serif); font-size: 15px; font-weight: 600;
+      font-family: var(--ff-serif); font-size: 16px; font-weight: 600;
       color: var(--ink); margin-bottom: 4px;
     }
-    .qs-step p { font-size: 12.5px; color: var(--ink-3); line-height: 1.65; }
+    .qs-step p { font-size: 13.5px; color: var(--ink-3); line-height: 1.75; }
     .mono { font-family: var(--ff-mono); font-size: 11px; color: var(--gold); }
 
     .qs-paths {
@@ -2294,11 +2290,11 @@
       border-radius: var(--radius-md); padding: 14px 18px; margin-top: 4px;
     }
     .qs-paths-head {
-      font-family: var(--ff-mono); font-size: 9px; color: var(--gold);
+      font-family: var(--ff-mono); font-size: 10px; color: var(--gold);
       letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px;
     }
     .qs-path {
-      font-family: var(--ff-mono); font-size: 11px;
+      font-family: var(--ff-mono); font-size: 12px;
       color: var(--ink-3); line-height: 1.9;
     }
     .qs-path.hi { color: var(--gold); }
@@ -2333,7 +2329,7 @@
       background: var(--gold-g);
       color: var(--gold);
       font-family: var(--ff-mono);
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: .08em;
       text-transform: uppercase;
       white-space: nowrap;
@@ -2472,8 +2468,8 @@
     .faq-answer {
       padding: 0 24px 24px;
       color: var(--ink-3);
-      font-size: 14px;
-      line-height: 1.88;
+      font-size: 15px;
+      line-height: 1.9;
       opacity: 0;
       transform: translateY(-8px);
       transition: opacity .28s ease, transform .36s cubic-bezier(.22, 1, .36, 1);
@@ -2632,6 +2628,219 @@
     }
 
 
+
+
+    /* =========================================
+       IN-PAGE PREVIEW DRAWER
+    ========================================= */
+    .preview-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 460;
+      background: rgba(26,24,21,.14);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .24s ease;
+    }
+
+    body.preview-open .preview-backdrop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .preview-panel {
+      position: fixed;
+      top: 84px;
+      right: 22px;
+      bottom: 22px;
+      width: min(46vw, 720px);
+      min-width: 360px;
+      z-index: 500;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow-xl);
+      overflow: hidden;
+      transform: translateX(calc(100% + 32px));
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .32s ease, opacity .24s ease, background-color .28s ease, border-color .28s ease, box-shadow .28s ease;
+    }
+
+    body.preview-open .preview-panel {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .preview-panel-head {
+      padding: 16px 18px 14px;
+      border-bottom: 1px solid var(--border-soft);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      background: linear-gradient(180deg, rgba(184,146,74,.06), rgba(184,146,74,.02));
+    }
+
+    .preview-panel-meta {
+      min-width: 0;
+    }
+
+    .preview-panel-kicker {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .preview-panel-title {
+      font-family: var(--ff-serif);
+      font-size: 20px;
+      line-height: 1.24;
+      color: var(--ink);
+      word-break: break-word;
+    }
+
+    .preview-panel-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .preview-panel-link,
+    .preview-panel-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(184,146,74,.24);
+      background: rgba(184,146,74,.08);
+      color: var(--gold);
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: .04em;
+      cursor: pointer;
+      transition: all .2s ease;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.45);
+    }
+
+    .preview-panel-link:hover,
+    .preview-panel-close:hover {
+      background: var(--gold);
+      color: #fff;
+      border-color: var(--gold);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 10px rgba(184,146,74,.22);
+    }
+
+    .preview-panel-close {
+      min-width: 34px;
+      padding: 0;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .preview-panel-status {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-soft);
+      background: var(--bg-subtle);
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: var(--ink-3);
+    }
+
+    .preview-panel-body {
+      flex: 1;
+      min-height: 0;
+      padding: 0 12px 12px;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-subtle) 100%);
+    }
+
+    .preview-frame {
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--border);
+      border-top: 0;
+      border-radius: 0 0 18px 18px;
+      display: block;
+      background: #fff;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.30), 0 1px 0 rgba(184,146,74,.06);
+    }
+
+    .preview-text-wrap,
+    .preview-image-wrap,
+    .preview-empty,
+    .preview-loading,
+    .preview-error {
+      height: 100%;
+      overflow: auto;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-top: 0;
+      border-radius: 0 0 18px 18px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.30), 0 1px 0 rgba(184,146,74,.06);
+    }
+
+    .preview-text-wrap,
+    .preview-empty,
+    .preview-loading,
+    .preview-error {
+      background: var(--bg-card);
+    }
+
+    .preview-image-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background: var(--bg-subtle);
+    }
+
+    .preview-text {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: var(--ff-mono);
+      font-size: 12.5px;
+      line-height: 1.78;
+      color: var(--ink-2);
+    }
+
+    .preview-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-xs);
+      background: var(--bg-card);
+    }
+
+    .preview-loading,
+    .preview-empty,
+    .preview-error {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--ink-3);
+    }
+
+    .artifact-link.is-preview-active,
+    .case-link.is-preview-active,
+    .spot-link.is-preview-active {
+      background: var(--gold);
+      color: #fff;
+      border-color: var(--gold);
+      box-shadow: 0 2px 10px rgba(184,146,74,.22);
+      transform: translateY(-1px);
+    }
+
     /* =========================================
        FOOTER
     ========================================= */
@@ -2642,14 +2851,21 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .footer-logo {
+      display: flex; align-items: center; gap: 9px;
       font-family: var(--ff-serif); font-size: 16px; font-weight: 600;
       color: var(--ink-2);
     }
+    .footer-logo-icon {
+      width: 22px;
+      height: 22px;
+      display: block;
+      flex-shrink: 0;
+    }
     .footer-logo .gold { color: var(--gold); }
-    .footer-copy { font-size: 12px; color: var(--ink-4); }
+    .footer-copy { font-size: 13px; color: var(--ink-4); }
     .footer-links { display: flex; gap: 24px; }
     .footer-links a {
-      font-family: var(--ff-mono); font-size: 10px; color: var(--ink-4);
+      font-family: var(--ff-mono); font-size: 11px; color: var(--ink-4);
       letter-spacing: .08em; transition: color .2s;
     }
     .footer-links a:hover { color: var(--gold); }
@@ -2707,6 +2923,33 @@
       transition: background-color .28s ease, color .28s ease, border-color .28s ease, box-shadow .28s ease, transform .22s ease;
     }
 
+    @media (max-width: 640px) {
+      .framework-preview-block {
+        padding: 4px 0 10px;
+      }
+
+      .framework-preview-figure {
+        border-radius: 20px;
+      }
+
+      .framework-preview-actions {
+        margin-top: 16px;
+      }
+
+      .preview-panel-body {
+        padding: 0 8px 8px;
+      }
+
+      .preview-frame,
+      .preview-text-wrap,
+      .preview-image-wrap,
+      .preview-empty,
+      .preview-loading,
+      .preview-error {
+        border-radius: 0 0 16px 16px;
+      }
+    }
+
     @media (max-width: 980px) {
       .case-spotlight-body { grid-template-columns: 1fr; }
       .spotlight-stages { grid-template-columns: 1fr; }
@@ -2730,6 +2973,41 @@
       .case-spotlight-top { flex-direction: column; align-items: flex-start; }
       .spotlight-links { grid-template-columns: 1fr; }
     }
+
+    @media (max-width: 960px) {
+      .preview-panel {
+        top: 82px;
+        right: 10px;
+        left: 10px;
+        bottom: 10px;
+        width: auto;
+        min-width: 0;
+        border-radius: 20px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .preview-panel-head {
+        padding: 14px 14px 12px;
+      }
+
+      .preview-panel-title {
+        font-size: 17px;
+      }
+
+      .preview-panel-status {
+        padding: 9px 14px;
+      }
+
+      .preview-text-wrap,
+      .preview-image-wrap,
+      .preview-empty,
+      .preview-loading,
+      .preview-error {
+        padding: 14px;
+      }
+    }
+
 
     @media (max-width: 1100px) {
       nav {
@@ -2823,18 +3101,19 @@
 <!-- ── NAV ── -->
 <nav>
   <div class="nav-logo">
+    <img src="./docs/assets/icon.png" alt="" class="nav-logo-icon" aria-hidden="true">
     <span><span class="gold">One</span>ResearchClaw</span>
   </div>
   <ul class="nav-links">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#pipeline">Pipeline</a></li>
+    <li><a href="#features">Core Capabilities</a></li>
+    <li><a href="#pipeline">Workflow Overview</a></li>
     <li><a href="#showcase">Showcase</a></li>
     <li><a href="#qs">Quick Start</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="nav-actions">
     <div class="theme-switcher" id="themeSwitcher">
-      <button class="theme-toggle" id="themeCycleToggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+      <button class="theme-toggle" id="themeCycleToggle" type="button" aria-label="Currently using the warm theme" title="Currently using the warm theme">
         <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
           <circle cx="12" cy="12" r="4.4" fill="currentColor"></circle>
           <path d="M12 2.8v2.3M12 18.9v2.3M21.2 12h-2.3M5.1 12H2.8M18.5 5.5l-1.6 1.6M7.1 16.9l-1.6 1.6M18.5 18.5l-1.6-1.6M7.1 7.1 5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
@@ -2849,7 +3128,7 @@
       <span>GitHub</span>
     </a>
 
-    <a href="./index_zh.html" class="lang-switch">中文</a>
+    <a href="./index.html" class="lang-switch">ZH</a>
   </div>
 </nav>
 
@@ -2864,30 +3143,33 @@
   <div class="dot-grid"></div>
 
   <div class="hero-brand">
-    <img src="./docs/assets/icon.png" alt="OneResearchClaw icon" class="hero-brand-icon">
-    <h1 class="hero-title hero-title-brand en-display">
-      <span class="t-gold">One</span><span class="t-ink">ResearchClaw</span>
-    </h1>
+    <img src="./docs/assets/logo.png" alt="OneResearchClaw logo" class="hero-logo-banner">
   </div>
-  
-  <p class="hero-tagline en-copy">
-    Any Research. One Claw.
-  </p>
   
   <p class="hero-sub en-copy">
     Multi-Format Input &rarr; Structured Research Report Generation Pipeline
   </p>
 
   <p class="hero-desc">
-    From meeting audio and video, documents, spreadsheets, and slide decks<br>
-    to arXiv, YouTube, and Bilibili links — automatically structure, research, review, and export.
+    From meeting audio/video, documents, spreadsheets, and slide decks to cloud links — <br>
+    automatically structure, research, review, and export everything.
   </p>
 
-  <div class="hero-btns">
-    <a href="#qs" class="btn btn-gold"><span class="btn-icon btn-icon-play" aria-hidden="true"></span><span>Quick Start</span></a>
-    <a href="#showcase" class="btn btn-outline"><span class="btn-icon btn-icon-showcase" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><rect x="3.5" y="4.5" width="17" height="15" rx="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10.5 9.7v9.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>Showcase</span></a>
-  </div>
+
   
+</div>
+
+
+<div class="framework-preview-block rv">
+  <div class="wrap">
+    <figure class="framework-preview-figure">
+      <img src="./docs/assets/framework-v6.png" alt="OneResearchClaw framework overview diagram">
+    </figure>
+    <div class="framework-preview-actions hero-btns">
+      <a href="#qs" class="btn btn-gold"><span class="btn-icon btn-icon-play" aria-hidden="true"></span><span>Quick Start</span></a>
+      <a href="#showcase" class="btn btn-outline"><span class="btn-icon btn-icon-showcase" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><rect x="3.5" y="4.5" width="17" height="15" rx="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10.5 9.7v9.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span>Showcase</span></a>
+    </div>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════════
@@ -2904,8 +3186,8 @@
         <div class="news-side">
           <div class="news-frame">
             <div class="news-badge">NEW</div>
-            <h3 class="news-item-title">Skill-Evolve Launch</h3>
-            <p class="news-item-desc">OneResearchClaw now supports continuous skill evolution from user feedback, with personalized preferences saved as optional derived variants.</p>
+            <h3 class="news-item-title">Skill-Evolve Now Live</h3>
+            <p class="news-item-desc">OneResearchClaw now supports continuously evolving skill sets from user feedback and saving personalized preferences as optional derived versions.</p>
           </div>
         </div>
         <div class="news-center"><span class="news-dot"></span></div>
@@ -2919,7 +3201,7 @@
           <div class="news-frame">
             <div class="news-badge">NEW</div>
             <h3 class="news-item-title">One-Click Cloud Link Ingestion</h3>
-            <p class="news-item-desc">Supports arXiv, YouTube, and Bilibili. Paste a link to automatically fetch materials and launch the downstream research workflow.</p>
+            <p class="news-item-desc">Supports arXiv, YouTube, and Bilibili: paste a link to automatically fetch the source material and launch the downstream research flow.</p>
           </div>
         </div>
       </div>
@@ -2928,7 +3210,7 @@
         <div class="news-side">
           <div class="news-frame">
             <h3 class="news-item-title">Multi-Model Review Loop</h3>
-            <p class="news-item-desc">The Review → Rewrite loop supports bounded iterative revision, improving final report completeness, coherence, and deliverability.</p>
+            <p class="news-item-desc">The Review → Rewrite loop supports bounded iterative revision to further improve completeness, reasoning quality, and deliverability in the final report.</p>
           </div>
         </div>
         <div class="news-center"><span class="news-dot"></span></div>
@@ -2941,7 +3223,7 @@
         <div class="news-side">
           <div class="news-frame">
             <h3 class="news-item-title">Controllable Research Depth</h3>
-            <p class="news-item-desc">Supports simple / medium / complex modes for explicit control over literature coverage, opened sources, and overall research cost.</p>
+            <p class="news-item-desc">Three modes—simple, medium, and complex—make it easier to control literature coverage, the number of opened sources, and overall research cost.</p>
           </div>
         </div>
       </div>
@@ -2950,7 +3232,7 @@
         <div class="news-side">
           <div class="news-frame">
             <h3 class="news-item-title">Parallel Multi-Topic Execution</h3>
-            <p class="news-item-desc">The system can automatically identify multiple meeting topics and generate separate reports for each, preserving distinct discussion threads and analysis branches.</p>
+            <p class="news-item-desc">The system can automatically detect multiple discussion threads in a meeting and generate separate reports for each, preserving every line of discussion and analytical branch more completely.</p>
           </div>
         </div>
         <div class="news-center"><span class="news-dot"></span></div>
@@ -2962,42 +3244,11 @@
         <div class="news-center"><span class="news-dot"></span></div>
         <div class="news-side">
           <div class="news-frame">
-            <h3 class="news-item-title">OneResearchClaw Release</h3>
-            <p class="news-item-desc">Supports multi-format inputs → automated research report generation. A single command runs the full grounding, research, review, and export pipeline.</p>
+            <h3 class="news-item-title">OneResearchClaw Released</h3>
+            <p class="news-item-desc">Supports multi-format input → automated research report generation, with one command connecting grounding, research, review, and export end to end.</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<div class="sep"><hr></div>
-
-<!-- ══════════════════════════════════════════
-     BRAND / FRAMEWORK OVERVIEW
-══════════════════════════════════════════ -->
-
-<section id="overview" class="overview-section">
-  <div class="wrap">
-    <div class="overview-logo-wrap rv">
-      <p class="eyebrow">Brand &amp; Framework</p>
-      <figure class="overview-logo-hero">
-        <img src="./docs/assets/logo.png" alt="OneResearchClaw logo">
-      </figure>
-    </div>
-
-    <div class="overview-framework-block rv d1">
-      <div class="overview-framework-head">
-        <div>
-          <div class="overview-kicker">System Overview</div>
-          <h3 class="overview-framework-title">OneResearchClaw Framework</h3>
-          <p class="overview-framework-copy">The full path from real-world materials to multi-format deliverables.</p>
-        </div>
-      </div>
-
-      <figure class="overview-framework-figure">
-        <img src="./docs/assets/framework-v6.png" alt="OneResearchClaw framework overview diagram">
-      </figure>
     </div>
   </div>
 </section>
@@ -3010,25 +3261,25 @@
 ══════════════════════════════════════════ -->
 <section id="features">
   <div class="wrap">
-    <p class="eyebrow">Features</p>
+    <p class="eyebrow">Core Capabilities</p>
     <h2>Built for <span class="dim">real research</span> workflows</h2>
-    <p class="lead">From unified multi-input ingestion to topic splitting, research, review, export, and skill evolution, OneResearchClaw covers the core capabilities required by a full research workflow.</p>
+    <p class="lead">From unified multi-input ingestion to topic split, research, review, export, and skill evolution, OneResearchClaw covers the key capabilities required for a complete research workflow.</p>
 
     <div class="feat-arch-wrap rv">
       <div class="feat-pair-row">
         <div class="feat-cell">
           <div class="feat-badge fb-gold">Input</div>
-          <div class="feat-title">🧭 Unified Multi-Input Ingestion</div>
+          <div class="feat-title">🧭 Unified Multi-Source Ingestion</div>
           <div class="feat-desc">
-            Supports diverse materials ranging from meeting recordings to PDFs, spreadsheets, and ZIP archives. The system automatically identifies the input type and routes it to the corresponding grounding skill, reducing manual organization, conversion, and preprocessing overhead.
+            Supports diverse inputs ranging from meeting recordings to PDFs, and from spreadsheets to ZIP archives. The system automatically identifies material types and routes them to the right grounding skill, reducing manual sorting, conversion, and preprocessing costs.
           </div>
         </div>
 
         <div class="feat-cell">
           <div class="feat-badge fb-gold">Meeting</div>
-          <div class="feat-title">🧠 Multi-Topic Meeting Splitting</div>
+          <div class="feat-title">🧠 Multi-Topic Meeting Split</div>
           <div class="feat-desc">
-            For long meetings, complex discussions, or multi-topic materials, the system can automatically split content into multiple topics and create independent research branches for each. Every topic can complete grounding, research, summary, and export separately, making it practical to produce several focused reports from one complex meeting.
+            For long meetings, complex discussions, or multi-topic materials, the system can automatically split out multiple topics and generate separate research branches for each. Every topic can independently go through grounding, research, summary, and export, making it ideal for turning one complex meeting into several focused reports.
           </div>
         </div>
       </div>
@@ -3038,15 +3289,15 @@
           <div class="feat-badge fb-teal">Research</div>
           <div class="feat-title">🎚️ Controllable Research Depth</div>
           <div class="feat-desc">
-            Supports simple / medium / complex research modes to control literature search scope, opened materials, evidence organization, and analytical depth. It can generate either a fast briefing or a more comprehensive research report.
+            Supports simple / medium / complex research modes to control literature search scope, source opening, evidence organization, and report depth. It can generate a quick briefing or a more complete research report.
           </div>
         </div>
 
         <div class="feat-cell">
           <div class="feat-badge fb-teal">Research</div>
-          <div class="feat-title">🔎 Query Confirmation and Targeted Search</div>
+          <div class="feat-title">🔎 Query Confirmation and Targeted Retrieval</div>
           <div class="feat-desc">
-            Before formal search begins, the system generates candidate queries from the grounded note and lets users confirm, add, remove, or revise them. This keeps literature search aligned with the actual research objective while reducing irrelevant retrieval and wasted tokens.
+            Before formal retrieval, the system generates candidate queries from the grounded note and lets users confirm, add, remove, or edit them. This keeps literature search aligned with the actual research direction and reduces irrelevant retrieval and token waste.
           </div>
         </div>
       </div>
@@ -3054,9 +3305,9 @@
       <div class="feat-pair-row">
         <div class="feat-cell">
           <div class="feat-badge fb-rose">Review</div>
-          <div class="feat-title">🧪 Multi-Model Review Mechanism</div>
+          <div class="feat-title">🧪 Multi-Model Review Loop</div>
           <div class="feat-desc">
-            After report generation, the system enters a review → rewrite loop. Different models or review perspectives can inspect completeness, evidence consistency, logical coherence, and over-claiming, followed by a bounded number of revisions.
+            After the report is generated, it enters a review → rewrite loop where different models or review lenses can inspect completeness, evidence consistency, logical coherence, and overreach, followed by bounded rounds of revision.
           </div>
         </div>
 
@@ -3064,7 +3315,7 @@
           <div class="feat-badge fb-violet">Links</div>
           <div class="feat-title">☁️ One-Click Cloud Link Ingestion</div>
           <div class="feat-desc">
-            Supports ingestion and processing of cloud-hosted materials such as arXiv, YouTube, and Bilibili, allowing online sources to enter the same research pipeline directly.
+            Supports ingesting and processing cloud-linked materials such as arXiv, YouTube, and Bilibili, allowing online sources to enter the same research pipeline directly.
           </div>
         </div>
       </div>
@@ -3074,7 +3325,7 @@
           <div class="feat-badge fb-violet">Output</div>
           <div class="feat-title">📦 Multi-Format Export</div>
           <div class="feat-desc">
-            Supports exporting final results as md / docx / pdf / pptx / audio, covering reading, archiving, presentation, and reuse scenarios, with both Chinese and English outputs.
+            Supports exporting final results as md / docx / pdf / pptx / audio for reading, archiving, presenting, and reuse across different delivery scenarios, with both Chinese and English output.
           </div>
         </div>
 
@@ -3082,7 +3333,7 @@
           <div class="feat-badge fb-violet">evolution</div>
           <div class="feat-title">🧬 Skill-Evolve</div>
           <div class="feat-desc">
-            Supports evolving subsets of skills from user feedback. Through feedback collection, patch generation, regression checks, and version upgrades, the system can improve continuously instead of staying fixed as a one-off hand-written workflow.
+            Supports evolving skill subsets from user feedback. Through feedback collection, patch generation, regression checks, and version upgrades, system capabilities can keep iterating instead of staying frozen in one-off hand-written workflows.
           </div>
         </div>
       </div>
@@ -3098,14 +3349,14 @@
 <section id="pipeline">
   <div class="wrap">
     <p class="eyebrow">Pipeline</p>
-    <h2>End-to-end <span class="dim">automated</span> pipeline</h2>
-    <p class="lead">From raw input to deliverable research report, the entire flow is automated.</p>
+    <h2>End-to-end <span class="dim">automated</span> workflow</h2>
+    <p class="lead">From raw input to a deliverable research report, the whole workflow is automated.</p>
 
     <div class="pipeline-card rv">
       <div class="pipe-bar">
         <div class="pipe-bar-main">
           <div class="pipe-live"></div>
-          <span class="pipe-bar-title">one-report &nbsp;&middot;&nbsp; unified entry for the full workflow</span>
+          <span class="pipe-bar-title">one-report &nbsp;&middot;&nbsp; end-to-end automated entrypoint</span>
         </div>
         <div class="pipe-bar-hint">Click to expand details</div>
       </div>
@@ -3121,28 +3372,28 @@
           <div class="ps-num">STAGE &middot; 0</div>
           <span class="ps-icon">🔀</span>
           <div class="ps-name">input-router</div>
-          <div class="ps-sub">Identify input type<br>route to the right pipeline</div>
+          <div class="ps-sub">Detect input type<br>Route to the right pipeline</div>
         </div>
         <div class="ps-arrow" data-arrow-index="0">&rsaquo;</div>
         <div class="ps" data-stage="grounding" data-stage-index="1" tabindex="0" role="button" aria-controls="pipeDetailShell" aria-expanded="false">
           <div class="ps-num">STAGE &middot; 1</div>
           <span class="ps-icon">🏗️</span>
           <div class="ps-name">Grounding</div>
-          <div class="ps-sub">Extract key information<br>generate grounded notes</div>
+          <div class="ps-sub">Extract key information<br>Produce a grounded note</div>
         </div>
         <div class="ps-arrow" data-arrow-index="1">&rsaquo;</div>
         <div class="ps" data-stage="research" data-stage-index="2" tabindex="0" role="button" aria-controls="pipeDetailShell" aria-expanded="false">
           <div class="ps-num">STAGE &middot; 2</div>
           <span class="ps-icon">🔍</span>
           <div class="ps-name">Literature Research</div>
-          <div class="ps-sub">Targeted retrieval<br>relevant literature and sources</div>
+          <div class="ps-sub">Targeted retrieval<br>Related literature & sources</div>
         </div>
         <div class="ps-arrow" data-arrow-index="2">&rsaquo;</div>
         <div class="ps" data-stage="synthesis" data-stage-index="3" tabindex="0" role="button" aria-controls="pipeDetailShell" aria-expanded="false">
           <div class="ps-num">STAGE &middot; 3</div>
           <span class="ps-icon">🧠</span>
           <div class="ps-name">Synthesis</div>
-          <div class="ps-sub">Synthesize technical notes<br>&amp; review the report</div>
+          <div class="ps-sub">Synthesis<br>& report review</div>
         </div>
         <div class="ps-arrow" data-arrow-index="3">&rsaquo;</div>
         <div class="ps" data-stage="export" data-stage-index="4" tabindex="0" role="button" aria-controls="pipeDetailShell" aria-expanded="false">
@@ -3157,20 +3408,20 @@
         <div class="pipe-detail-grid">
           <div class="pipe-detail-main">
             <div class="pipe-detail-kicker" id="pipeDetailKicker">STAGE · 0</div>
-            <h3 class="pipe-detail-title" id="pipeDetailTitle">Input Router · Unified Entry Routing</h3>
-            <p class="pipe-detail-desc" id="pipeDetailDesc">Identify whether the input is audio, video, a document, spreadsheet, slide deck, ZIP mixed-material package, or a remote link such as arXiv / YouTube / Bilibili, then route it to the corresponding grounding workflow. Users always interact with the same one-report entry point instead of manually switching scripts or preprocessing paths.</p>
+            <h3 class="pipe-detail-title" id="pipeDetailTitle">Input Router · unified entrypoint routing</h3>
+            <p class="pipe-detail-desc" id="pipeDetailDesc">Detect whether the input is audio, video, documents, spreadsheets, slide decks, a ZIP mixed-material package, or remote links such as arXiv / YouTube / Bilibili, then route the material to the corresponding grounding workflow. Users always work through a single one-report entrypoint instead of manually switching scripts or preprocessing paths.</p>
           </div>
 
           <div class="pipe-detail-side">
             <div class="pipe-detail-block">
-              <div class="pipe-detail-block-head">Key artifacts</div>
+              <div class="pipe-detail-block-head">Key Artifacts</div>
               <div class="pipe-detail-tags" id="pipeDetailArtifacts">
                 <span class="pipe-detail-tag">manifest.json</span>
                 <span class="pipe-detail-tag">routed_items.json</span>
               </div>
             </div>
             <div class="pipe-detail-block">
-              <div class="pipe-detail-block-head">User controls</div>
+              <div class="pipe-detail-block-head">User Controls</div>
               <div class="pipe-detail-tags" id="pipeDetailControls">
                 <span class="pipe-detail-tag">input_path</span>
                 <span class="pipe-detail-tag">local / remote input</span>
@@ -3183,7 +3434,7 @@
 
       <div class="pipe-io">
         <div>
-          <div class="pipe-io-head">Input formats</div>
+          <div class="pipe-io-head">Input Formats</div>
           <div class="tags">
             <span class="tag tg-gold">.mp3 .wav .m4a</span>
             <span class="tag tg-gold">.mp4 .mov .mkv</span>
@@ -3200,7 +3451,7 @@
           <div class="io-line"></div>
         </div>
         <div>
-          <div class="pipe-io-head">Output formats</div>
+          <div class="pipe-io-head">Output Formats</div>
           <div class="tags">
             <span class="tag tg-gold">.md</span>
             <span class="tag tg-teal">.pdf</span>
@@ -3227,10 +3478,9 @@
 
     <div class="showcase-intro rv">
       <div>
-        <h3>Five cases, five capability checks</h3>
+        <h3>5 cases, 5 capability checks</h3>
         <p>
-          From multi-topic meeting splitting and remote link ingestion to research depth control, Review → Rewrite, and integrated handling of ZIP mixed-material packages,
-          these five cases cover the most essential workflow capabilities of OneResearchClaw.
+          From multi-topic meeting split to link ingestion, research depth control, the Review → Rewrite loop, and integrated handling of ZIP mixed-material packages, these five cases cover the core workflow capabilities of OneResearchClaw.
         </p>
       </div>
       <div class="showcase-stats">
@@ -3240,16 +3490,16 @@
         </div>
         <div class="ss-item">
           <span class="ss-n">6+</span>
-          <div class="ss-l">Input types</div>
+          <div class="ss-l">Input Types</div>
         </div>
         <div class="ss-item">
           <span class="ss-n">2</span>
-          <div class="ss-l">Bilingual delivery</div>
+          <div class="ss-l">Bilingual Delivery</div>
         </div>
       </div>
     </div>
 
-    <div class="showcase-picker rv d1" role="tablist" aria-label="Switch case">
+    <div class="showcase-picker rv d1" role="tablist" aria-label="Case switcher">
       <button class="showcase-tab is-active" type="button" role="tab" aria-selected="true" data-case="case1">🧠 01 Meeting</button>
       <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-case="case2">🔗 02 arXiv</button>
       <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-case="case3">🎚️ 03 Research Depth</button>
@@ -3268,7 +3518,7 @@
             </div>
           </div>
           <div class="case-body">
-            <div class="case-desc">A single meeting input produces not just one overall summary, but multiple automatically identified topics, each turned into an independently deliverable grounded report so different discussions do not get mixed into one artifact.</div>
+            <div class="case-desc">A single meeting input does not just produce one overall report. It automatically identifies multiple topics and turns them into independently deliverable grounded reports, preventing different issues from being mixed into the same output.</div>
 
             <div class="case-topic-split">
               <div class="topic-item">
@@ -3282,34 +3532,34 @@
             </div>
 
             <div class="case-features">
-              <span class="cf-tag">multi-topic split</span>
-              <span class="cf-tag">meeting grounding</span>
+              <span class="cf-tag">Multi-topic split</span>
+              <span class="cf-tag">Meeting grounding</span>
               <span class="cf-tag">topic-level report</span>
               <span class="cf-tag">2 topics</span>
-              <span class="cf-tag">bilingual PDFs</span>
+              <span class="cf-tag">Bilingual PDF</span>
             </div>
 
             <div class="case-detail-layout">
               <div class="case-detail-main">
                 <div class="case-proof-block">
-                  <div class="case-proof-head">What this case shows</div>
-                  <p>OneResearchClaw does more than “summarize a meeting.” It can split a long meeting into multiple parallel topic branches so that each discussion thread has its own grounded note, research augmentation, and final deliverable report.</p>
+                  <div class="case-proof-head">What this case proves</div>
+                  <p>OneResearchClaw does more than summarize a meeting. It can split a long meeting into multiple parallel topic branches so each discussion thread gets its own grounded note, research augmentation, and final deliverable report.</p>
                 </div>
                 <div class="case-quickfacts">
-                  <div class="case-fact"><div class="case-fact-k">Target capability</div><div class="case-fact-v">multi-topic detection + topic-level grounded summary</div></div>
-                  <div class="case-fact"><div class="case-fact-k">Grounding</div><div class="case-fact-v">Automatically detect topical boundaries in a meeting and split them into independent grounded units</div></div>
-                  <div class="case-fact"><div class="case-fact-k">Outputs</div><div class="case-fact-v">Generate a separate report for each topic, with both Chinese and English versions</div></div>
-                  <div class="case-fact"><div class="case-fact-k">Use cases</div><div class="case-fact-v">Long meetings, lab meetings, interviews, and other multi-topic discussion materials</div></div>
+                  <div class="case-fact"><div class="case-fact-k">Target capability</div><div class="case-fact-v">Multi-topic detection + topic-level grounded summary</div></div>
+                  <div class="case-fact"><div class="case-fact-k">Grounding</div><div class="case-fact-v">Automatically detect topic boundaries in a meeting and split them into independent grounded units</div></div>
+                  <div class="case-fact"><div class="case-fact-k">Output</div><div class="case-fact-v">Generate a separate report for each topic, with both Chinese and English versions</div></div>
+                  <div class="case-fact"><div class="case-fact-k">Best for</div><div class="case-fact-v">Long meetings, lab meetings, interviews, and other multi-topic discussion materials</div></div>
                 </div>
               </div>
             </div>
 
-            <div class="case-input-row">Input: <a download href="./docs/showcase/inputs/case1/meeting-case1.txt"><code>docs/showcase/inputs/case1/meeting-case1.txt</code></a></div>
+            <div class="case-input-row">Input:<a download href="./docs/showcase/inputs/case1/meeting-case1.txt"><code>docs/showcase/inputs/case1/meeting-case1.txt</code></a></div>
             <div class="case-cta">
               <a class="case-link" href="./docs/showcase/reports/case1/meeting_meeting-case1_20260416004530_topic01/en/report.pdf">📄 Topic01 EN PDF</a>
-              <a class="case-link" href="./docs/showcase/reports/case1/meeting_meeting-case1_20260416004530_topic01/zh/report.pdf">📄 Topic01 ZH PDF</a>
+              <a class="case-link" href="./docs/showcase/reports/case1/meeting_meeting-case1_20260416004530_topic01/zh/report.pdf">📄 Topic01 Chinese PDF</a>
               <a class="case-link" href="./docs/showcase/reports/case1/meeting_meeting-case1_20260416004530_topic02/en/report.pdf">📄 Topic02 EN PDF</a>
-              <a class="case-link" href="./docs/showcase/reports/case1/meeting_meeting-case1_20260416004530_topic02/zh/report.pdf">📄 Topic02 ZH PDF</a>
+              <a class="case-link" href="./docs/showcase/reports/case1/meeting_meeting-case1_20260416004530_topic02/zh/report.pdf">📄 Topic02 Chinese PDF</a>
             </div>
           </div>
         </div>
@@ -3320,40 +3570,40 @@
           <div class="case-header">
             <span class="case-num">02</span>
             <div class="case-meta">
-              <div class="case-type ct-teal">Remote-Link Grounding</div>
+              <div class="case-type ct-teal">Remote Link Grounding</div>
               <div class="case-title">🔗 arXiv Link → Grounded Research Report</div>
             </div>
           </div>
           <div class="case-body">
-            <div class="case-desc">The workflow starts directly from a remote paper link, without requiring users to prepare a local PDF or manually organize materials. The link itself enters the unified grounding → research → export pipeline.</div>
+            <div class="case-desc">Start directly from a remote paper link with no need to prepare a local PDF or manually organize materials; the link itself can enter the unified grounding → research → export pipeline.</div>
 
             <div class="case-features">
               <span class="cf-tag">arXiv URL ingestion</span>
               <span class="cf-tag">remote-input</span>
               <span class="cf-tag">Grounded report</span>
-              <span class="cf-tag">rapid research</span>
-              <span class="cf-tag">bilingual PDFs</span>
+              <span class="cf-tag">Rapid research</span>
+              <span class="cf-tag">Bilingual PDF</span>
             </div>
 
             <div class="case-detail-layout">
               <div class="case-detail-main">
                 <div class="case-proof-block">
-                  <div class="case-proof-head">What this case shows</div>
-                  <p>OneResearchClaw supports “link as input.” This shows the pipeline does not depend on a single local file upload path: remote papers can enter the same research workflow directly and yield reports that are easier to read and deliver.</p>
+                  <div class="case-proof-head">What this case proves</div>
+                  <p>OneResearchClaw supports “links as input.” This shows the pipeline is not tied to a single local file upload path: remote papers can enter the same research flow directly and produce reports better suited for reading and delivery.</p>
                 </div>
                 <div class="case-quickfacts">
                   <div class="case-fact"><div class="case-fact-k">Input form</div><div class="case-fact-v">Remote paper link, no manual download required</div></div>
-                  <div class="case-fact"><div class="case-fact-k">Grounding</div><div class="case-fact-v">Acquire paper content and turn it into structured notes for downstream research</div></div>
-                  <div class="case-fact"><div class="case-fact-k">Research</div><div class="case-fact-v">Extend the paper with background, related work, and supporting evidence</div></div>
-                  <div class="case-fact"><div class="case-fact-k">Why it matters</div><div class="case-fact-v">Remote inputs connect directly to the unified pipeline, making them suitable for rapid research and briefings</div></div>
+                  <div class="case-fact"><div class="case-fact-k">Grounding</div><div class="case-fact-v">Fetch paper content and convert it into a structured note for downstream research</div></div>
+                  <div class="case-fact"><div class="case-fact-k">Research</div><div class="case-fact-v">Build on the paper itself with added background, related work, and evidence</div></div>
+                  <div class="case-fact"><div class="case-fact-k">Value</div><div class="case-fact-v">Remote inputs plug directly into the unified pipeline, making them ideal for rapid research and briefing</div></div>
                 </div>
               </div>
             </div>
 
-            <div class="case-input-row">Input: <a download href="./docs/showcase/inputs/case2/arxiv-case2.txt"><code>docs/showcase/inputs/case2/arxiv-case2.txt</code></a></div>
+            <div class="case-input-row">Input:<a download href="./docs/showcase/inputs/case2/arxiv-case2.txt"><code>docs/showcase/inputs/case2/arxiv-case2.txt</code></a></div>
             <div class="case-cta">
               <a class="case-link" href="./docs/showcase/reports/case2/pdf-2505.03123_20260415112502/en/report.pdf">📄 EN PDF</a>
-              <a class="case-link" href="./docs/showcase/reports/case2/pdf-2505.03123_20260415112502/zh/report.pdf">📄 ZH PDF</a>
+              <a class="case-link" href="./docs/showcase/reports/case2/pdf-2505.03123_20260415112502/zh/report.pdf">📄 Chinese PDF</a>
             </div>
           </div>
         </div>
@@ -3369,35 +3619,35 @@
             </div>
           </div>
           <div class="case-body">
-            <div class="case-desc">This case shows how the same input behaves under <code>simple / medium / complex</code> research depth settings: coverage, opened sources, analytical granularity, and cost can all be explicitly controlled instead of being locked to a single fixed research intensity.</div>
+            <div class="case-desc">Shows how the same input differs under <code>simple / medium / complex</code>  three research depth levels: coverage, the number of opened sources, analysis granularity, and cost can all be explicitly controlled rather than fixed to a single intensity.</div>
 
             <div class="case-features">
               <span class="cf-tag">same input</span>
               <span class="cf-tag">same task</span>
               <span class="cf-tag">research_mode</span>
               <span class="cf-tag">Simple / Medium / Complex</span>
-              <span class="cf-tag">bilingual PDFs</span>
+              <span class="cf-tag">Bilingual PDF</span>
             </div>
 
             <div class="case-detail-layout">
               <div class="case-detail-main">
                 <div class="case-compare-grid">
-                  <div class="case-compare-item"><div class="case-compare-k">Simple</div><div class="case-compare-v">Quickly adds background and a small set of core related work; suitable for low-cost briefings and fast understanding.</div></div>
-                  <div class="case-compare-item"><div class="case-compare-k">Medium</div><div class="case-compare-v">Balances literature coverage, analytical depth, and execution cost; suitable as the default mode.</div></div>
-                  <div class="case-compare-item"><div class="case-compare-k">Complex</div><div class="case-compare-v">Opens more sources and adds more systematic related work, research context, and evidence organization; suitable for deeper research scenarios.</div></div>
+                  <div class="case-compare-item"><div class="case-compare-k">Simple</div><div class="case-compare-v">Quickly add background and a small set of core related work, ideal for low-cost briefing and fast material understanding.</div></div>
+                  <div class="case-compare-item"><div class="case-compare-k">Medium</div><div class="case-compare-v">Balances literature coverage, analytical depth, and execution cost, making it a strong default mode.</div></div>
+                  <div class="case-compare-item"><div class="case-compare-k">Complex</div><div class="case-compare-v">Opens more sources and adds more systematic related work, research context, and evidence organization, making it suitable for deeper research.</div></div>
                 </div>
                 <div class="case-proof-block">
-                  <div class="case-proof-head">What this case shows</div>
-                  <p>With the same input material and the same report-generation task, <code>research_mode</code> lets users tune research intensity. This enables explicit trade-offs between speed and depth based on time budget, token cost, and delivery requirements.</p>
+                  <div class="case-proof-head">What this case proves</div>
+                  <p>The same input material and the same reporting task can adjust research intensity through <code>research_mode</code> . Users can make an explicit trade-off between speed and depth based on time budget, token cost, and delivery requirements.</p>
                 </div>
               </div>
             </div>
 
-            <div class="case-input-row">Input: <a download href="./docs/showcase/inputs/case3/youtube.txt"><code>docs/showcase/inputs/case3/youtube.txt</code></a></div>
+            <div class="case-input-row">Input:<a download href="./docs/showcase/inputs/case3/youtube.txt"><code>docs/showcase/inputs/case3/youtube.txt</code></a></div>
             <div class="case-cta">
-              <a class="case-link" href="./docs/showcase/reports/case3/simple/video-55_20260417134520/zh/report.pdf">📄 Simple ZH</a>
-              <a class="case-link" href="./docs/showcase/reports/case3/medium/video-55_20260417145442/zh/report.pdf">📄 Medium ZH</a>
-              <a class="case-link" href="./docs/showcase/reports/case3/complex/video-55_20260416144423/zh/report.pdf">📄 Complex ZH</a>
+              <a class="case-link" href="./docs/showcase/reports/case3/simple/video-55_20260417134520/zh/report.pdf">📄 Simple Chinese</a>
+              <a class="case-link" href="./docs/showcase/reports/case3/medium/video-55_20260417145442/zh/report.pdf">📄 Medium Chinese</a>
+              <a class="case-link" href="./docs/showcase/reports/case3/complex/video-55_20260416144423/zh/report.pdf">📄 Complex Chinese</a>
               <a class="case-link" href="./docs/showcase/reports/case3/simple/video-55_20260417134520/en/report.pdf">📄 Simple EN</a>
               <a class="case-link" href="./docs/showcase/reports/case3/medium/video-55_20260417145442/en/report.pdf">📄 Medium EN</a>
               <a class="case-link" href="./docs/showcase/reports/case3/complex/video-55_20260416144423/en/report.pdf">📄 Complex EN</a>
@@ -3416,14 +3666,14 @@
             </div>
           </div>
           <div class="case-body">
-            <div class="case-desc">This case shows that OneResearchClaw is not a one-shot generator. Under reviewer feedback, it can continue diagnosing and rewriting: the initial report is scored first, then revised according to repair actions until it passes the quality gate.</div>
+            <div class="case-desc">Shows that OneResearchClaw does not produce a one-shot result. Under reviewer feedback, it can continue diagnosing and rewriting: the initial report is scored first, then revised according to repair actions until it passes the quality gate.</div>
 
             <div class="case-features">
               <span class="cf-tag">4 review rounds</span>
               <span class="cf-tag">3 rewrite rounds</span>
               <span class="cf-tag">60 → 91</span>
-              <span class="cf-tag">quality gate</span>
-              <span class="cf-tag">pre-delivery revision</span>
+              <span class="cf-tag">Quality gate</span>
+              <span class="cf-tag">Pre-delivery revision</span>
             </div>
 
             <div class="case-detail-layout">
@@ -3435,18 +3685,18 @@
                   <div class="case-fact"><div class="case-fact-k">Round 3</div><div class="case-fact-v"><strong>91 / 100</strong> · pass</div></div>
                 </div>
                 <div class="case-proof-block">
-                  <div class="case-proof-head">What this case shows</div>
-                  <p>The review loop materially improves report structure, evidence specificity, analytical depth, and final delivery quality. In this example, after 3 rounds of repair / rewrite, the score rises from <code>60 / 100</code> to <code>91 / 100</code> and passes quality review.</p>
+                  <div class="case-proof-head">What this case proves</div>
+                  <p>The review loop materially improves structural completeness, evidence specificity, analytical depth, and final delivery quality. In this example, after 3 rounds of repair / rewrite, the report improved from <code>60 / 100</code>  to <code>91 / 100</code>  and passed the quality check.</p>
                 </div>
               </div>
             </div>
 
-            <div class="case-input-row">Input: <a download href="./docs/showcase/inputs/case4/2506.10006v2.pdf"><code>docs/showcase/inputs/case4/2506.10006v2.pdf</code></a></div>
+            <div class="case-input-row">Input:<a download href="./docs/showcase/inputs/case4/2506.10006v2.pdf"><code>docs/showcase/inputs/case4/2506.10006v2.pdf</code></a></div>
             <div class="case-cta">
-              <a class="case-link" href="./docs/showcase/reports/case4/berfore_review/pdf-2506.10006v2before_20260416025902/en/report.pdf">📄 Pre-Review EN</a>
-              <a class="case-link" href="./docs/showcase/reports/case4/berfore_review/pdf-2506.10006v2before_20260416025902/zh/report.pdf">📄 Pre-Review ZH</a>
-              <a class="case-link" href="./docs/showcase/reports/case4/after_review/pdf-2506.10006v2_20260416025902/en/report.pdf">📄 Post-Review EN</a>
-              <a class="case-link" href="./docs/showcase/reports/case4/after_review/pdf-2506.10006v2_20260416025902/zh/report.pdf">📄 Post-Review ZH</a>
+              <a class="case-link" href="./docs/showcase/reports/case4/berfore_review/pdf-2506.10006v2before_20260416025902/en/report.pdf">📄 Before Review EN</a>
+              <a class="case-link" href="./docs/showcase/reports/case4/berfore_review/pdf-2506.10006v2before_20260416025902/zh/report.pdf">📄 Before Review Chinese</a>
+              <a class="case-link" href="./docs/showcase/reports/case4/after_review/pdf-2506.10006v2_20260416025902/en/report.pdf">📄 After Review EN</a>
+              <a class="case-link" href="./docs/showcase/reports/case4/after_review/pdf-2506.10006v2_20260416025902/zh/report.pdf">📄 After Review Chinese</a>
             </div>
           </div>
         </div>
@@ -3462,35 +3712,35 @@
             </div>
           </div>
           <div class="case-body">
-            <div class="case-desc">This case demonstrates end-to-end delivery capability, including mixed-material integration, structured outputs, and final bilingual results. The emphasis is the full closed loop from multiple input types to final delivery rather than any single isolated feature.</div>
+            <div class="case-desc">Shows integrated capability at the final delivery layer, including mixed-material integration, structured output, and both Chinese and English versions. This case emphasizes the full closed loop from diverse inputs to final delivery rather than a single isolated capability.</div>
 
             <div class="case-features">
               <span class="cf-tag">ZIP mixed-material package</span>
               <span class="cf-tag">archive-grounding</span>
-              <span class="cf-tag">cross-file synthesis</span>
+              <span class="cf-tag">Cross-file integration</span>
               <span class="cf-tag">final delivery</span>
-              <span class="cf-tag">bilingual PDFs</span>
+              <span class="cf-tag">Bilingual PDF</span>
             </div>
 
             <div class="case-detail-layout">
               <div class="case-detail-main">
                 <div class="case-proof-block">
-                  <div class="case-proof-head">What this case shows</div>
-                  <p>This case demonstrates the full closed loop from multiple input sources to bilingual outputs: materials from different origins are integrated into a single report structure, supplemented with necessary external evidence, and then delivered as final outputs.</p>
+                  <div class="case-proof-head">What this case proves</div>
+                  <p>This case shows the pipeline’s full closed loop from multi-source input to bilingual results: materials from different sources are unified into the same report structure, supplemented with necessary external evidence, and then moved into final delivery.</p>
                 </div>
                 <div class="case-quickfacts">
-                  <div class="case-fact"><div class="case-fact-k">Input</div><div class="case-fact-v">HER2-case5.zip, which can contain multiple grounded materials in one package</div></div>
-                  <div class="case-fact"><div class="case-fact-k">Integration</div><div class="case-fact-v">Merge materials from different sources into one unified report structure</div></div>
+                  <div class="case-fact"><div class="case-fact-k">Input</div><div class="case-fact-v">HER2-case5.zip, which can contain a mix of already grounded materials</div></div>
+                  <div class="case-fact"><div class="case-fact-k">Integration</div><div class="case-fact-v">Merge materials from different sources into a unified report structure</div></div>
                   <div class="case-fact"><div class="case-fact-k">Language output</div><div class="case-fact-v">Supports delivery in both Chinese and English</div></div>
-                  <div class="case-fact"><div class="case-fact-k">Final goal</div><div class="case-fact-v">A final deliverable report suitable for real usage scenarios</div></div>
+                  <div class="case-fact"><div class="case-fact-k">Final goal</div><div class="case-fact-v">A final deliverable report for real-world usage scenarios</div></div>
                 </div>
               </div>
             </div>
 
-            <div class="case-input-row">Input: <a download href="./docs/showcase/inputs/case5/HER2-case5.zip"><code>docs/showcase/inputs/case5/HER2-case5.zip</code></a></div>
+            <div class="case-input-row">Input:<a download href="./docs/showcase/inputs/case5/HER2-case5.zip"><code>docs/showcase/inputs/case5/HER2-case5.zip</code></a></div>
             <div class="case-cta">
               <a class="case-link" href="./docs/showcase/reports/case5/archive-HER2-case5_20260415130231/en/report.pdf">📄 EN PDF</a>
-              <a class="case-link" href="./docs/showcase/reports/case5/archive-HER2-case5_20260415130231/zh/report.pdf">📄 ZH PDF</a>
+              <a class="case-link" href="./docs/showcase/reports/case5/archive-HER2-case5_20260415130231/zh/report.pdf">📄 Chinese PDF</a>
             </div>
           </div>
         </div>
@@ -3508,7 +3758,7 @@
   <div class="wrap">
     <p class="eyebrow">Quick Start</p>
     <h2>Quick <span class="dim">Start</span></h2>
-    <p class="lead">Three steps from raw input to a complete research report.</p>
+    <p class="lead">Three steps from raw input to a full research report.</p>
 
     <div class="qs-grid rv">
 
@@ -3543,8 +3793,8 @@
 - <span class="cmt">download_opened_literature:</span> <span class="num">true</span>
 
 <span class="sym">Optional:</span>
-- <span class="cmt">output_lang:</span> <span class="str">zh</span>
-- <span class="cmt">transcription_language:</span> <span class="str">zh</span></pre>
+- <span class="cmt">output_lang:</span> <span class="str">en</span>
+- <span class="cmt">transcription_language:</span> <span class="str">en</span></pre>
       </div>
 
       <div class="qs-steps">
@@ -3552,21 +3802,21 @@
           <div class="qs-num">1</div>
           <div>
             <h4>Prepare your input file</h4>
-            <p>Place your file in <span class="mono">data/raw_inputs/</span>. Supported inputs include audio, video, documents, spreadsheets, slide decks, ZIP mixed-material packages, and pasted links.</p>
+            <p>Put the file in <span class="mono">data/raw_inputs/</span>. Audio, video, documents, spreadsheets, PPT, ZIP mixed packages, and pasted links are all supported.</p>
           </div>
         </div>
         <div class="qs-step">
           <div class="qs-num">2</div>
           <div>
             <h4>Send prompt to Cursor Agent</h4>
-            <p>First read <span class="mono">.cursor/skills/one-report/SKILL.md</span>, then fill in <span class="mono">input_path</span>, <span class="mono">research_mode</span>, and <span class="mono">output_formats</span> following the example.</p>
+            <p>Read <span class="mono">.cursor/skills/one-report/SKILL.md</span> first, then fill in input_path, research_mode, and output_formats following the example.</p>
           </div>
         </div>
         <div class="qs-step">
           <div class="qs-num">3</div>
           <div>
             <h4>Run the full pipeline</h4>
-            <p>The agent will automatically execute the full end-to-end pipeline: grounding &rarr; research &rarr; summary &rarr; review &rarr; export.</p>
+            <p>The agent will automatically execute grounding &rarr; research &rarr; summary &rarr; review &rarr; export end to end.</p>
           </div>
         </div>
 
@@ -3587,28 +3837,28 @@
       <summary class="qs-example-toggle">
         <div class="qs-example-toggle-left">
           <h3>Case 5 · Mixed Materials → Final Bilingual Delivery</h3>
-          <p>Click to expand and inspect the full artifact chain and intermediate outputs from <span class="mono">HER2-case5.zip</span> to the final Chinese / English PDFs.</p>
+          <p>Click to expand and inspect the full artifact chain—from <span class="mono">HER2-case5.zip</span> to the final Chinese / English PDFs—along with intermediate outputs from each stage.</p>
         </div>
-        <span class="qs-example-toggle-right">Expand example</span>
+        <span class="qs-example-toggle-right">Expand Example</span>
       </summary>
 
       <div class="qs-example-body">
         <div class="qs-example-overview">
-          <h4>Run configuration overview</h4>
+          <h4>Run Configuration Overview</h4>
           <p>
             This is a real Quick Start run: the input is <span class="mono">HER2-case5.zip</span>, the research mode is <span class="mono">complex</span>, the search backend is <span class="mono">cursor</span>, and both <span class="mono">require_open_link: true</span> and <span class="mono">download_opened_literature: true</span> are enabled.
           </p>
           <div class="mini-meta">
-            <span class="mini-chip">Input: ZIP mixed-material package</span>
+            <span class="mini-chip">Input:ZIP mixed-material package</span>
             <span class="mini-chip">Research：complex</span>
             <span class="mini-chip">Backend：cursor</span>
             <span class="mini-chip">Open sources: true</span>
-            <span class="mini-chip">Download literature: true</span>
+            <span class="mini-chip">Download papers: true</span>
             <span class="mini-chip">Output: Chinese / English PDF</span>
           </div>
           <div class="qs-example-actions">
             <a href="./docs/showcase/inputs/case5/HER2-case5.zip" class="case-link">📥 Input ZIP</a>
-            <a href="./docs/showcase/reports/case5/archive-HER2-case5_20260415130231/zh/report.pdf" class="case-link primary">📄 ZH PDF</a>
+            <a href="./docs/showcase/reports/case5/archive-HER2-case5_20260415130231/zh/report.pdf" class="case-link primary">📄 Chinese PDF</a>
             <a href="./docs/showcase/reports/case5/archive-HER2-case5_20260415130231/en/report.pdf" class="case-link">📄 EN PDF</a>
           </div>
         </div>
@@ -3617,7 +3867,7 @@
           <div class="qs-example-grid">
             <div class="stage-card">
               <h4>1. Input Routing</h4>
-              <p>Identify the input as a ZIP mixed-material package and record how internal files are routed to different grounding skills.</p>
+              <p>Recognize the input as a ZIP mixed-material package and record how internal files are routed to different grounding skills.</p>
               <div class="artifact-links">
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/grounded_notes/archive-HER2-case5_20260415130231/manifest.json">manifest.json</a>
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/grounded_notes/archive-HER2-case5_20260415130231/routed_items.json">routed_items.json</a>
@@ -3626,7 +3876,7 @@
 
             <div class="stage-card">
               <h4>2. Grounding</h4>
-              <p>Convert the heterogeneous materials inside the ZIP into structured content usable by downstream research / summary / review stages.</p>
+              <p>Convert the multiple materials inside the ZIP into structured content that can be used in the later research / summary / review stages.</p>
               <div class="artifact-links">
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/grounded_notes/archive-HER2-case5_20260415130231/grounded.md">grounded.md</a>
               </div>
@@ -3634,7 +3884,7 @@
 
             <div class="stage-card">
               <h4>3. Query Generation</h4>
-              <p>Generate candidate queries from the grounded note first, then confirm them before formal search to reduce irrelevant retrieval and wasted tokens.</p>
+              <p>Generate candidate queries from the grounded note first, then confirm them before formal retrieval to reduce irrelevant search and token waste.</p>
               <div class="artifact-links">
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/lit_inputs/archive-HER2-case5_20260415130231/queries.json">queries.json</a>
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/lit_inputs/archive-HER2-case5_20260415130231/queries_confirmed.json">queries_confirmed.json</a>
@@ -3643,7 +3893,7 @@
 
             <div class="stage-card">
               <h4>4. Literature Research</h4>
-              <p>Under complex mode, open sources, preserve evidence, organize paper notes, and produce a stronger <span class="mono">lit.md</span>.</p>
+              <p>In complex mode, open sources, save evidence, organize paper notes, and produce a stronger lit.md.</p>
               <div class="artifact-links">
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/lit_inputs/archive-HER2-case5_20260415130231/search_results.json">search_results.json</a>
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/lit_results/archive-HER2-case5_20260415130231/lit.md">lit.md</a>
@@ -3652,7 +3902,7 @@
 
             <div class="stage-card">
               <h4>5. Summary</h4>
-              <p>Integrate the grounded note with literature results to form a structured summary rather than compressing everything into a few short bullet points.</p>
+              <p>Integrate the grounded note and literature results into a structured summary rather than compressing everything into a few bullet-style takeaways.</p>
               <div class="artifact-links">
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/report_inputs/archive-HER2-case5_20260415130231/summary.md">summary.md</a>
               </div>
@@ -3660,7 +3910,7 @@
 
             <div class="stage-card">
               <h4>6. Review → Rewrite</h4>
-              <p>Perform bounded rounds of revision around coverage, evidence specificity, analytical depth, and deliverability.</p>
+              <p>Run bounded rounds of revision around coverage, evidence specificity, analytical depth, and deliverability.</p>
               <div class="artifact-links">
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/review_outputs/archive-HER2-case5_20260415130231/review_history.json">review_history.json</a>
               </div>
@@ -3668,7 +3918,7 @@
 
             <div class="stage-card stage-full">
               <h4>7. Final Export</h4>
-              <p>After review passes, the final report is written to <span class="mono">research_report.md</span> and exported as Chinese / English PDFs, so users can inspect both the final deliverables and the full artifact chain.</p>
+              <p>Once review passes, the final report is written to research_report.md and exported as Chinese / English PDFs. This lets users inspect the final deliverables while also tracing the full artifact chain.</p>
               <div class="artifact-links">
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/reports/archive-HER2-case5_20260415130231/research_report.md">research_report.md</a>
                 <a class="artifact-link" href="./docs/showcase/reports/readme_case/final_outputs/archive-HER2-case5_20260415130231/zh/report.pdf">zh/report.pdf</a>
@@ -3692,20 +3942,20 @@
     <div class="faq-head">
       <div>
         <p class="eyebrow">FAQ</p>
-        <h2>Common <span class="dim">questions</span></h2>
-        <p class="lead">Placed after Quick Start to help users quickly confirm supported inputs, research depth, the review loop, and delivery options before getting started.</p>
+        <h2>Common <span class="dim">Questions</span></h2>
+        <p class="lead">Placed after Quick Start to help users quickly confirm supported inputs, research depth, the review mechanism, and delivery options before they start using the system.</p>
       </div>
-      <div class="faq-note">Click a question to expand</div>
+      <div class="faq-note">Click a question to expand the answer</div>
     </div>
 
     <div class="faq-grid">
       <details class="faq-item rv">
         <summary>
-          <span class="faq-question">What input forms are supported?</span>
+          <span class="faq-question">What input types are supported?</span>
           <span class="faq-toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>Supports meeting audio / video, documents, spreadsheets, slide decks, ZIP mixed-material packages, and remote links such as arXiv, YouTube, and Bilibili. The system first identifies the input type and then routes it to the corresponding grounding workflow.</p>
+          <p>Meeting audio / video, documents, spreadsheets, slide decks, ZIP mixed-material packages, and remote links such as arXiv, YouTube, and Bilibili are supported. The system identifies the input type first and then routes it to the appropriate grounding workflow.</p>
         </div>
       </details>
 
@@ -3715,37 +3965,37 @@
           <span class="faq-toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p><code>research_mode</code> supports <code>simple / medium / complex</code>. Simple is suitable for low-cost briefings, medium is a balanced default, and complex is better when you need broader literature coverage, more opened sources, and deeper analysis.</p>
+          <p><code>research_mode</code> supports <code>simple / medium / complex</code>. Simple is good for low-cost briefing, medium is a balanced default, and complex fits cases that need broader literature coverage, more opened sources, and deeper analysis.</p>
         </div>
       </details>
 
       <details class="faq-item rv d2">
         <summary>
-          <span class="faq-question">Do I need to configure extra APIs?</span>
+          <span class="faq-question">Do I need to configure an API separately?</span>
           <span class="faq-toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>The base workflow does not require an additional reviewer API. By default it can run through a local / Cursor-side workflow. You only need the optional <code>reviewer_api_config</code> if you want each review round to use an external reviewer.</p>
+          <p>The base workflow does not require an extra reviewer API. By default it can run through a local / Cursor-side workflow; you only need to provide the optional <code>reviewer_api_config</code> if you want each review round to use an external reviewer.</p>
         </div>
       </details>
 
       <details class="faq-item rv d3">
         <summary>
-          <span class="faq-question">What does the review mechanism do?</span>
+          <span class="faq-question">What exactly does the review mechanism do?</span>
           <span class="faq-toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>After generation, the report enters a review → rewrite loop. The reviewer checks topic alignment, coverage, evidence specificity, analytical depth, structural coherence, and deliverability; the writer revises according to repair actions until the report passes the quality gate or reaches the bounded round limit.</p>
+          <p>After report generation, the system enters a review → rewrite loop. The reviewer checks topic alignment, coverage, evidence specificity, analytical depth, structure coherence, and deliverability; the writer revises according to repair actions until the report passes the quality gate or reaches the bounded round limit.</p>
         </div>
       </details>
 
       <details class="faq-item rv d4">
         <summary>
-          <span class="faq-question">Can export formats be customized?</span>
+          <span class="faq-question">Can I customize the export formats?</span>
           <span class="faq-toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>Yes. <code>output_formats</code> supports <code>md / docx / pdf / pptx / audio</code>, including comma-separated combinations; <code>output_lang</code> controls the final delivery language, such as Chinese or English.</p>
+          <p>Yes. <code>output_formats</code> supports <code>md / docx / pdf / pptx / audio</code> and comma-separated combinations; <code>output_lang</code> controls the final delivery language, such as Chinese or English.</p>
         </div>
       </details>
 
@@ -3755,7 +4005,7 @@
           <span class="faq-toggle" aria-hidden="true"></span>
         </summary>
         <div class="faq-answer">
-          <p>It turns recurring user feedback into skill modification proposals that are reviewable, verifiable, and reusable, then applies patches, regression checks, and version upgrades to form derived skill variants better aligned with personal preferences.</p>
+          <p>It turns repeated user feedback into reviewable, verifiable, reusable skill modification proposals, then passes them through patching, regression checks, and version upgrades to form derived skill versions better aligned with personal preferences.</p>
         </div>
       </details>
     </div>
@@ -3773,7 +4023,7 @@
       <div class="final-cta-inner">
         <div class="final-cta-kicker">Ready to Start</div>
         <h2 class="final-cta-title">Ready to build your research report?</h2>
-        <p class="final-cta-copy">Start from any supported input format and generate a well-structured research report today.</p>
+        <p class="final-cta-copy">Start from any input format and generate a structurally complete research report today.</p>
         <div class="final-cta-actions">
           <a class="final-cta-btn final-cta-btn-primary" href="https://github.com/gaotiexinqu/One-Research" target="_blank" rel="noopener noreferrer" aria-label="View OneResearchClaw on GitHub">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52 0-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82A7.5 7.5 0 0 1 8 3.8c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg>
@@ -3792,14 +4042,34 @@
 <!-- ══════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════ -->
+
+<div class="preview-backdrop" id="previewBackdrop" aria-hidden="true"></div>
+<aside class="preview-panel" id="previewPanel" aria-hidden="true">
+  <div class="preview-panel-head">
+    <div class="preview-panel-meta">
+      <div class="preview-panel-kicker" id="previewKicker">File Preview</div>
+      <div class="preview-panel-title" id="previewTitle">No file opened</div>
+    </div>
+    <div class="preview-panel-actions">
+      <a class="preview-panel-link" id="previewOpenLink" href="#" target="_blank" rel="noopener noreferrer" hidden>Open in New Tab</a>
+      <button class="preview-panel-close" id="previewCloseBtn" type="button" aria-label="Close preview">×</button>
+    </div>
+  </div>
+  <div class="preview-panel-status" id="previewStatus">Click any displayed PDF / md / json / txt file on the page to preview it in the right-side panel.</div>
+  <div class="preview-panel-body" id="previewBody">
+    <div class="preview-empty">No preview file is currently open.</div>
+  </div>
+</aside>
+
 <footer>
   <div class="footer-logo">
+    <img src="./docs/assets/icon.png" alt="" class="footer-logo-icon" aria-hidden="true">
     <span><span class="gold">One</span>ResearchClaw</span>
   </div>
   <div class="footer-copy">Any Research. One Claw.</div>
   <div class="footer-links">
-    <a href="#features">Features</a>
-    <a href="#pipeline">Pipeline</a>
+    <a href="#features">Core Capabilities</a>
+    <a href="#pipeline">Workflow Overview</a>
     <a href="#showcase">Showcase</a>
     <a href="#qs">Quick Start</a>
     <a href="#faq">FAQ</a>
@@ -3877,40 +4147,40 @@
   const pipelineStageData = {
     router: {
       kicker: 'STAGE · 0',
-      title: 'Input Router · Unified Entry Routing',
-      desc: 'Identify whether the input is audio, video, a document, spreadsheet, slide deck, ZIP mixed-material package, or a remote link such as arXiv / YouTube / Bilibili, then route it to the corresponding grounding workflow. Users always interact with the same one-report entry point instead of manually switching scripts or preprocessing paths.',
-      points: ['single entry', 'input identification', 'remote link ingestion'],
+      title: 'Input Router · unified entrypoint routing',
+      desc: 'Detect whether the input is audio, video, documents, spreadsheets, slide decks, a ZIP mixed-material package, or remote links such as arXiv / YouTube / Bilibili, then route the material to the corresponding grounding workflow. Users always work through a single one-report entrypoint instead of manually switching scripts or preprocessing paths.',
+      points: ['single entrypoint', 'material detection', 'remote link ingestion'],
       artifacts: ['manifest.json', 'routed_items.json'],
       controls: ['input_path', 'local / remote input', 'mixed materials']
     },
     grounding: {
       kicker: 'Stage · 1',
-      title: 'Grounding · From raw material to grounded note',
-      desc: 'Transform raw meetings, documents, or mixed materials into structured grounded notes that capture core topics, key claims, evidence traces, and necessary context. For multi-topic inputs, this stage can also handle topic splitting so downstream research no longer depends on fragmented raw material.',
+      title: 'Grounding · from raw material to grounded note',
+      desc: 'Turn raw meetings, documents, or mixed materials into a structured grounded note that extracts core topics, key arguments, evidence cues, and necessary context. For multi-topic inputs, this step can also handle topic split so downstream research no longer starts from scattered raw material.',
       points: ['grounded.md', 'topic split', 'structured input'],
       artifacts: ['grounded.md', 'meeting transcript / parsed text'],
       controls: ['transcription_language', 'input type skill', 'topic-level grounding']
     },
     research: {
       kicker: 'Stage · 2',
-      title: 'Literature Research · Targeted retrieval and depth control',
-      desc: 'Generate candidate queries from the grounded note, confirm them, and then proceed to formal retrieval, source opening, and evidence organization. The key control here is research depth: simple / medium / complex affects literature coverage, the number of opened sources, and final analytical depth.',
+      title: 'Literature Research · targeted retrieval and depth control',
+      desc: 'Generate candidate queries from the grounded note, confirm them, then move into formal retrieval, source opening, and evidence organization. The most important control in this stage is research depth: simple / medium / complex changes literature coverage, the number of opened sources, and final analytical depth.',
       points: ['query confirmation', 'research_mode', 'opened sources'],
       artifacts: ['queries.json', 'queries_confirmed.json', 'search_results.json', 'lit.md'],
       controls: ['research_mode', 'search_backend', 'require_open_link', 'download_opened_literature']
     },
     synthesis: {
       kicker: 'Stage · 3',
-      title: 'Summary synthesis and Review Loop',
-      desc: 'Organize grounded notes and literature results into a structured summary, then enter report generation and the review → rewrite loop. The goal is not just to combine information, but to verify coverage, evidence specificity, analytical depth, and deliverability so the final report is truly ready for use.',
+      title: 'Summary synthesis and the Review Loop',
+      desc: 'Organize the grounded note and literature results into a structured summary, then enter report generation and the review → rewrite loop. The goal is not just to stitch information together, but to verify coverage, evidence specificity, analytical depth, and deliverability so the final report can actually be delivered.',
       points: ['summary.md', 'review → rewrite', 'evidence consistency'],
       artifacts: ['summary.md', 'review_history.json', 'research_report.md'],
       controls: ['review rounds', 'reviewer config', 'output_lang']
     },
     export: {
       kicker: 'Stage · 4',
-      title: 'Export · Multi-format outputs for delivery',
-      desc: 'After the report passes review, the system exports it as deliverable formats such as md / pdf / docx / pptx / audio while preserving the full artifact chain for reading, presentation, archiving, and reuse. The export stage emphasizes deliverability, not just file conversion.',
+      title: 'Export · multi-format output for delivery',
+      desc: 'Once the report passes review, the system exports it as md / pdf / docx / pptx / audio and preserves the full artifact chain for reading, presenting, archiving, and reuse. The export stage emphasizes final deliverability, not just file conversion.',
       points: ['multi-format export', 'bilingual delivery', 'final_outputs'],
       artifacts: ['report.md', 'report.pdf', 'report.docx', 'report.pptx', 'report.audio'],
       controls: ['output_formats', 'output_lang', 'final delivery']
@@ -4105,20 +4375,230 @@
     });
   }
 
+  /* ── In-page file preview drawer ── */
+  const previewPanel = document.getElementById('previewPanel');
+  const previewBackdrop = document.getElementById('previewBackdrop');
+  const previewTitle = document.getElementById('previewTitle');
+  const previewKicker = document.getElementById('previewKicker');
+  const previewStatus = document.getElementById('previewStatus');
+  const previewBody = document.getElementById('previewBody');
+  const previewOpenLink = document.getElementById('previewOpenLink');
+  const previewCloseBtn = document.getElementById('previewCloseBtn');
+  const PREVIEWABLE_EXTENSIONS = ['pdf', 'md', 'json', 'txt', 'png', 'jpg', 'jpeg', 'webp', 'gif', 'svg'];
+  const PREVIEW_LINK_SELECTOR = 'a.artifact-link[href], a.case-link[href], a.spot-link[href]';
+  let activePreviewUrl = null;
+  let activePreviewLink = null;
+  let previewRequestToken = 0;
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function getPreviewType(href) {
+    if (!href) return null;
+    const cleanHref = href.split('#')[0].split('?')[0].toLowerCase();
+    const match = cleanHref.match(/\.([a-z0-9]+)$/);
+    if (!match) return null;
+    return PREVIEWABLE_EXTENSIONS.includes(match[1]) ? match[1] : null;
+  }
+
+  function getDisplayFileName(href) {
+    if (!href) return 'Untitled file';
+    const cleanHref = href.split('#')[0].split('?')[0];
+    const fileName = cleanHref.substring(cleanHref.lastIndexOf('/') + 1) || cleanHref;
+    try {
+      return decodeURIComponent(fileName);
+    } catch (err) {
+      return fileName;
+    }
+  }
+
+  function getPreviewLabel(type) {
+    if (!type) return 'File Preview';
+    return `${type.toUpperCase()} Preview`;
+  }
+
+  function renderRawTextFrame(rawHref, fileName) {
+    if (!previewBody) return;
+    previewBody.innerHTML = `<iframe class="preview-frame" src="${escapeHtml(rawHref)}" title="${escapeHtml(fileName)}"></iframe>`;
+  }
+
+  function setActivePreviewLink(link) {
+    if (activePreviewLink && activePreviewLink !== link) {
+      activePreviewLink.classList.remove('is-preview-active');
+      activePreviewLink.setAttribute('aria-expanded', 'false');
+    }
+
+    activePreviewLink = link || null;
+
+    if (activePreviewLink) {
+      activePreviewLink.classList.add('is-preview-active');
+      activePreviewLink.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  function openPreviewPanel() {
+    body.classList.add('preview-open');
+    if (previewPanel) previewPanel.setAttribute('aria-hidden', 'false');
+    if (previewBackdrop) previewBackdrop.setAttribute('aria-hidden', 'false');
+  }
+
+  function closePreviewPanel() {
+    body.classList.remove('preview-open');
+    activePreviewUrl = null;
+    previewRequestToken += 1;
+
+    if (previewPanel) previewPanel.setAttribute('aria-hidden', 'true');
+    if (previewBackdrop) previewBackdrop.setAttribute('aria-hidden', 'true');
+    if (previewTitle) previewTitle.textContent = 'No file opened';
+    if (previewKicker) previewKicker.textContent = 'File Preview';
+    if (previewStatus) previewStatus.textContent = 'Click any displayed PDF / md / json / txt file on the page to preview it in the right-side panel.';
+    if (previewBody) previewBody.innerHTML = '<div class="preview-empty">No preview file is currently open.</div>';
+    if (previewOpenLink) {
+      previewOpenLink.hidden = true;
+      previewOpenLink.removeAttribute('href');
+    }
+
+    if (activePreviewLink) {
+      activePreviewLink.classList.remove('is-preview-active');
+      activePreviewLink.setAttribute('aria-expanded', 'false');
+      activePreviewLink = null;
+    }
+  }
+
+  async function renderPreviewContent(link, type, absoluteUrl, rawHref) {
+    const requestToken = ++previewRequestToken;
+    const fileName = getDisplayFileName(rawHref);
+    const isLocalFilePreview = window.location.protocol === 'file:';
+
+    if (previewTitle) previewTitle.textContent = fileName;
+    if (previewKicker) previewKicker.textContent = getPreviewLabel(type);
+    if (previewStatus) {
+      previewStatus.textContent = type === 'md'
+        ? 'Markdown preview is currently shown.'
+        : type === 'json'
+          ? 'JSON preview is currently shown.'
+          : `${type.toUpperCase()} preview is currently shown.`;
+    }
+    if (previewOpenLink) {
+      previewOpenLink.hidden = false;
+      previewOpenLink.href = rawHref;
+    }
+
+    openPreviewPanel();
+    setActivePreviewLink(link);
+    activePreviewUrl = absoluteUrl;
+
+    if (!previewBody) return;
+
+    previewBody.innerHTML = '<div class="preview-loading">Loading preview…</div>';
+
+    try {
+      if (type === 'pdf') {
+        previewBody.innerHTML = `<iframe class="preview-frame" src="${escapeHtml(rawHref)}#view=FitH" title="${escapeHtml(fileName)}"></iframe>`;
+        return;
+      }
+
+      if (['png', 'jpg', 'jpeg', 'webp', 'gif', 'svg'].includes(type)) {
+        previewBody.innerHTML = `<div class="preview-image-wrap"><img class="preview-image" src="${escapeHtml(rawHref)}" alt="${escapeHtml(fileName)}"></div>`;
+        return;
+      }
+
+      if (isLocalFilePreview && ['md', 'json', 'txt', 'html'].includes(type)) {
+        if (previewStatus) {
+          previewStatus.textContent = type === 'json'
+            ? 'Raw JSON preview is currently shown.'
+            : 'Raw text preview is currently shown.';
+        }
+        renderRawTextFrame(rawHref, fileName);
+        return;
+      }
+
+      const response = await fetch(absoluteUrl, { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      let text = await response.text();
+      if (requestToken !== previewRequestToken) return;
+
+      if (type === 'json') {
+        try {
+          text = JSON.stringify(JSON.parse(text), null, 2);
+        } catch (err) {
+          // keep original text when JSON parsing fails
+        }
+      }
+
+      previewBody.innerHTML = `<div class="preview-text-wrap"><pre class="preview-text">${escapeHtml(text)}</pre></div>`;
+    } catch (error) {
+      if (requestToken !== previewRequestToken) return;
+
+      if (['md', 'json', 'txt', 'html'].includes(type)) {
+        if (previewStatus) {
+          previewStatus.textContent = type === 'json'
+            ? 'Raw JSON preview is currently shown. Since formatted reading failed, it automatically fell back to the browser raw view.'
+            : 'Raw text preview is currently shown. Since scripted reading failed, it automatically fell back to the browser raw view.';
+        }
+        renderRawTextFrame(rawHref, fileName);
+        return;
+      }
+
+      previewBody.innerHTML = '<div class="preview-error">Preview failed to load. You can still view this file through “Open in New Tab” in the upper-right corner.</div>';
+      if (previewStatus) previewStatus.textContent = 'This file cannot be previewed inside the sidebar.';
+    }
+  }
+
+  document.querySelectorAll(PREVIEW_LINK_SELECTOR).forEach((link) => {
+    const rawHref = link.getAttribute('href');
+    const previewType = getPreviewType(rawHref);
+
+    if (!previewType || link.hasAttribute('download')) {
+      return;
+    }
+
+    link.dataset.preview = 'true';
+    link.dataset.previewType = previewType;
+    link.setAttribute('aria-expanded', 'false');
+
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const absoluteUrl = new URL(rawHref, window.location.href).href;
+
+      if (activePreviewUrl === absoluteUrl) {
+        closePreviewPanel();
+        return;
+      }
+
+      renderPreviewContent(link, previewType, absoluteUrl, rawHref);
+    });
+  });
+
+  if (previewCloseBtn) {
+    previewCloseBtn.addEventListener('click', closePreviewPanel);
+  }
+
+  if (previewBackdrop) {
+    previewBackdrop.addEventListener('click', closePreviewPanel);
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && body.classList.contains('preview-open')) {
+      closePreviewPanel();
+    }
+  });
+
+
   /* ── Theme switcher ── */
   const body = document.body;
   const themeCycleToggle = document.getElementById('themeCycleToggle');
   const THEME_KEY = 'one-research-claw-theme';
-  const THEME_ORDER = ['warm', 'light', 'dark'];
-
-  const CRAB_ICON = `
-    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
-      <path d="M7.2 13.8c0-3 2.15-5.2 4.8-5.2s4.8 2.2 4.8 5.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
-      <path d="M8.1 13.8h7.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
-      <path d="M6.8 10.8 5 9M17.2 10.8 19 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
-      <path d="M4.6 8.8c.8-.7 1.7-.7 2.4.1M19.4 8.8c-.8-.7-1.7-.7-2.4.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
-      <path d="M8.6 14.3v2.3M10.8 14.5v2.8M13.2 14.5v2.8M15.4 14.3v2.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-    </svg>`;
+  const THEME_ORDER = ['warm', 'dark'];
 
   const SUN_ICON = `
     <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
@@ -4128,21 +4608,23 @@
 
   const MOON_ICON = `
     <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
-      <path d="M14.7 4.9a7.9 7.9 0 1 0 4.4 14.4 8.5 8.5 0 1 1-4.4-14.4Z" fill="currentColor"></path>
+      <defs>
+        <mask id="theme-moon-mask">
+          <rect width="24" height="24" fill="white"></rect>
+          <circle cx="15.2" cy="10.2" r="6.6" fill="black"></circle>
+        </mask>
+      </defs>
+      <circle cx="11" cy="12" r="7.2" fill="currentColor" mask="url(#theme-moon-mask)"></circle>
     </svg>`;
 
   const THEME_META = {
     warm: {
       icon: SUN_ICON,
-      label: 'Switch to light theme'
-    },
-    light: {
-      icon: MOON_ICON,
-      label: 'Switch to dark theme'
+      label: 'Currently using the warm theme'
     },
     dark: {
-      icon: CRAB_ICON,
-      label: 'Switch to default theme'
+      icon: MOON_ICON,
+      label: 'Currently using the dark theme'
     }
   };
 
